@@ -1,5 +1,11 @@
-import { useState } from 'react';
 import { Star, ArrowLeft, ArrowRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const testimonials = [
   {
@@ -33,25 +39,6 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const getVisibleTestimonials = () => {
-    const items = [];
-    for (let i = 0; i < 3; i++) {
-      const index = (currentIndex + i) % testimonials.length;
-      items.push(testimonials[index]);
-    }
-    return items;
-  };
-
   return (
     <section className="py-24 bg-[#050B14] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,54 +53,54 @@ const TestimonialsSection = () => {
           </p>
         </div>
 
-        {/* Carousel Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {getVisibleTestimonials().map((item) => (
-            <div 
-              key={item.id} 
-              className="bg-[#0B1221] border border-border/60 p-8 rounded-2xl shadow-xl flex flex-col justify-between h-full min-h-[320px] transition-all duration-300 hover:border-primary/20"
-            >
-              <div>
-                {/* Stars */}
-                <div className="flex gap-1 text-primary mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={20} fill="currentColor" className="drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
-                  ))}
+        {/* Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((item) => (
+              <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div 
+                  className="bg-[#0B1221] border border-border/60 p-8 rounded-2xl shadow-xl flex flex-col justify-between h-full min-h-[320px] transition-all duration-300 hover:border-primary/20"
+                >
+                  <div>
+                    {/* Stars */}
+                    <div className="flex gap-1 text-primary mb-6">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={20} fill="currentColor" className="drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]" />
+                      ))}
+                    </div>
+                    {/* Testimonial Text */}
+                    <p className="text-foreground/90 text-[15px] leading-relaxed mb-8 font-light">
+                      "{item.text}"
+                    </p>
+                  </div>
+                  
+                  {/* Author */}
+                  <div className="mt-auto">
+                    <h4 className="font-bold text-foreground text-base">{item.name}</h4>
+                    <p className="text-xs text-muted-foreground mt-1">{item.role}</p>
+                    <p className="text-xs text-muted-foreground/70">{item.location}</p>
+                  </div>
                 </div>
-                {/* Testimonial Text */}
-                <p className="text-foreground/90 text-[15px] leading-relaxed mb-8 font-light">
-                  "{item.text}"
-                </p>
-              </div>
-              
-              {/* Author */}
-              <div className="mt-auto">
-                <h4 className="font-bold text-foreground text-base">{item.name}</h4>
-                <p className="text-xs text-muted-foreground mt-1">{item.role}</p>
-                <p className="text-xs text-muted-foreground/70">{item.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Navigation Arrows */}
-        <div className="flex justify-center items-center gap-4 mb-10">
-          <button 
-            onClick={prevSlide}
-            className="group p-3 rounded-full border border-border bg-transparent hover:bg-secondary hover:border-primary/50 transition-all duration-300 focus:outline-none"
-            aria-label="Anterior"
-          >
-            <ArrowLeft size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
           
-          <button 
-            onClick={nextSlide}
-            className="group p-3 rounded-full border border-border bg-transparent hover:bg-secondary hover:border-primary/50 transition-all duration-300 focus:outline-none"
-            aria-label="Próximo"
-          >
-            <ArrowRight size={20} className="text-muted-foreground group-hover:text-primary transition-colors" />
-          </button>
-        </div>
+          {/* Navigation Arrows */}
+          <div className="flex justify-center items-center gap-4 mt-12 mb-10">
+            <CarouselPrevious 
+              className="static translate-y-0 bg-transparent border-border hover:bg-secondary hover:border-primary/50 text-muted-foreground hover:text-primary"
+            />
+            <CarouselNext 
+              className="static translate-y-0 bg-transparent border-border hover:bg-secondary hover:border-primary/50 text-muted-foreground hover:text-primary"
+            />
+          </div>
+        </Carousel>
 
         {/* Bottom Text */}
         <div className="text-center">
