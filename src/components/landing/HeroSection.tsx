@@ -1,23 +1,17 @@
 import { ArrowRight, ShoppingCart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ebookCover from "@/assets/ebook-cover.png";
-
 const HeroSection = () => {
-  return (
-    <div className="relative min-h-screen bg-[#020617] font-sans text-foreground selection:bg-primary selection:text-white overflow-hidden">
+  return <div className="relative min-h-screen bg-[#020617] font-sans text-foreground selection:bg-primary selection:text-white overflow-hidden">
       
       {/* Background with clinic image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop" 
-          alt="Clinic Background" 
-          className="w-full h-full object-cover opacity-20 blur-sm"
-        />
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2068&auto=format&fit=crop" alt="Clinic Background" className="w-full h-full object-cover opacity-20 blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/95 to-[#0B1525]/80"></div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-32 lg:pt-40 lg:pb-40">
+      <div className="relative z-10 max-w-7xl px-4 sm:px-6 pt-32 pb-32 lg:pt-40 lg:pb-40 py-[70px] lg:px-0 my-0 mx-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Side: Text with Glass Effect */}
@@ -47,11 +41,7 @@ const HeroSection = () => {
             {/* Glow effect behind the book */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[80px]"></div>
             
-            <img 
-              src={ebookCover}
-              alt="Manual Tracción de Dientes" 
-              className="relative z-10 w-full max-w-md lg:max-w-lg object-contain drop-shadow-2xl rotate-[-5deg] hover:rotate-0 transition duration-500 animate-float"
-            />
+            <img src={ebookCover} alt="Manual Tracción de Dientes" className="relative z-10 w-full max-w-md lg:max-w-lg object-contain drop-shadow-2xl rotate-[-5deg] hover:rotate-0 transition duration-500 animate-float" />
           </div>
         </div>
       </div>
@@ -88,8 +78,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
