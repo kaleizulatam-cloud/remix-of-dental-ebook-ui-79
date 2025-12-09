@@ -1,10 +1,8 @@
 import { ArrowRight, Download, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ebookCover from "@/assets/ebook-cover.png";
-
 const HeroSection = () => {
-  return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+  return <section className="relative pt-32 pb-20 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
@@ -24,28 +22,23 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button variant="hero" size="xl" className="group">
                 Quiero el Ebook
-                <ArrowRight
-                  size={20}
-                  className="transition-transform group-hover:translate-x-1"
-                />
+                <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </div>
 
           <div className="relative group animate-scale-in">
             <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float">
-              <img
-                src={ebookCover}
-                alt="Ebook Tracción de Dientes Retenidos"
-                className="rounded-xl shadow-2xl mx-auto max-w-[400px] w-full glow-primary"
-              />
+              <img src={ebookCover} alt="Ebook Tracción de Dientes Retenidos" className="rounded-xl shadow-2xl mx-auto max-w-[400px] w-full glow-primary" />
             </div>
           </div>
         </div>
 
         {/* Stats Bar */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex items-center justify-center gap-3">
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm animate-fade-up" style={{
+        animationDelay: '0.3s'
+      }}>
+          <div className="gap-3 flex-row flex items-center justify-end py-0 border-0">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <Download size={20} />
             </div>
@@ -56,7 +49,7 @@ const HeroSection = () => {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-3">
+          <div className="gap-3 flex items-center justify-start">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <User size={20} />
             </div>
@@ -67,32 +60,10 @@ const HeroSection = () => {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-3 hidden md:flex">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <Download size={20} />
-            </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">98%</p>
-              <p className="text-xs text-muted-foreground uppercase">
-                Satisfacción
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center gap-3 hidden md:flex">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <User size={20} />
-            </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">15+</p>
-              <p className="text-xs text-muted-foreground uppercase">
-                Países
-              </p>
-            </div>
-          </div>
+          
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
