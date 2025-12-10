@@ -3,7 +3,7 @@ import ebookCover from "@/assets/ebook-cover.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-8 overflow-visible">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
@@ -38,9 +38,11 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Stats Bar - Section Divider */}
-        <div className="mt-16 flex justify-center gap-12 md:gap-24 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl animate-fade-up relative z-10" style={{ animationDelay: '0.3s' }}>
+      {/* Stats Bar - Section Divider - Positioned to overlap next section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mt-16 -mb-10">
+        <div className="flex justify-center gap-12 md:gap-24 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <ShoppingCart size={20} />
