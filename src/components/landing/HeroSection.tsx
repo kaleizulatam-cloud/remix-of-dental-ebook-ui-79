@@ -1,34 +1,30 @@
-import { ArrowRight, Download, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, ShoppingCart, Users } from "lucide-react";
 import ebookCover from "@/assets/ebook-cover.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
+    <section className="relative pt-32 pb-32 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-              EL MÉTODO DEFINITIVO PARA{" "}
-              <span className="text-gradient">
-                PREVENIR TRATAMIENTOS INDEFINIDOS
-              </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
+              EL MÉTODO DEFINITIVO PARA PREVENIR TRATAMIENTOS INDEFINIDOS
             </h1>
-            <p className="text-lg text-muted-foreground max-w-lg">
+            <p className="text-lg text-slate-300 max-w-lg">
               Diagnóstico preciso, prevención efectiva y tracción segura, paso a
               paso para tener resultados desde tu próximo paciente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="hero" size="xl" className="group">
+              <button className="group inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-cyan-600 to-cyan-400">
                 Quiero el Ebook
                 <ArrowRight
                   size={20}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </Button>
+              </button>
             </div>
           </div>
 
@@ -43,28 +39,28 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Stats Bar */}
-        <div className="mt-16 flex justify-center gap-12 md:gap-24 bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
+        {/* Stats Bar - Section Divider */}
+        <div className="mt-16 flex justify-center gap-12 md:gap-24 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl animate-fade-up relative z-10" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <Download size={20} />
+              <ShoppingCart size={20} />
             </div>
             <div className="text-center">
-              <p className="text-xs text-muted-foreground uppercase">
+              <p className="text-xs text-slate-400 uppercase">
                 Ventas Totales
               </p>
-              <p className="text-xl font-bold text-foreground">705</p>
+              <p className="text-xl font-bold text-white">705</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <User size={20} />
+              <Users size={20} />
             </div>
             <div className="text-center">
-              <p className="text-xs text-muted-foreground uppercase">
+              <p className="text-xs text-slate-400 uppercase">
                 Profesionales Activos
               </p>
-              <p className="text-xl font-bold text-foreground">500+</p>
+              <p className="text-xl font-bold text-white">500+</p>
             </div>
           </div>
         </div>
