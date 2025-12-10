@@ -44,49 +44,27 @@ const HeroSection = () => {
         </div>
 
         {/* Stats Bar */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex items-center justify-center gap-3">
+        <div className="mt-16 flex justify-center gap-12 md:gap-24 bg-card/50 border border-border rounded-xl p-6 backdrop-blur-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <Download size={20} />
             </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">705</p>
+            <div className="text-center">
               <p className="text-xs text-muted-foreground uppercase">
                 Ventas Totales
               </p>
+              <p className="text-xl font-bold text-foreground">705</p>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <User size={20} />
             </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">500+</p>
+            <div className="text-center">
               <p className="text-xs text-muted-foreground uppercase">
                 Profesionales Activos
               </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center gap-3 hidden md:flex">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <Download size={20} />
-            </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">98%</p>
-              <p className="text-xs text-muted-foreground uppercase">
-                Satisfacción
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center justify-center gap-3 hidden md:flex">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <User size={20} />
-            </div>
-            <div>
-              <p className="text-xl font-bold text-foreground">15+</p>
-              <p className="text-xs text-muted-foreground uppercase">
-                Países
-              </p>
+              <p className="text-xl font-bold text-foreground">500+</p>
             </div>
           </div>
         </div>
