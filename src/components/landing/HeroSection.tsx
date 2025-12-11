@@ -1,9 +1,17 @@
 import { ArrowRight, ShoppingCart, Users } from "lucide-react";
 import ebookCover from "@/assets/ebook-cover.png";
+import dentalOfficeBg from "@/assets/dental-office-bg.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative pt-32 pb-8 overflow-visible">
+      {/* Background Image with Dark Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
+        style={{ backgroundImage: `url(${dentalOfficeBg})` }}
+      />
+      <div className="absolute inset-0 bg-black/75 -z-10" />
+      
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
@@ -40,9 +48,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Stats Bar - Section Divider - Positioned to overlap next section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 mt-16 -mb-10">
-        <div className="flex justify-center gap-12 md:gap-24 bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
+      {/* Stats Bar - Full Width Section Divider */}
+      <div className="w-full relative z-20 mt-16 -mb-10">
+        <div className="flex justify-center gap-12 md:gap-24 bg-white/5 border-y border-white/10 py-6 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
               <ShoppingCart size={20} />
