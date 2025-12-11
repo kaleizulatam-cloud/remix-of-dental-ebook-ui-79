@@ -48,6 +48,16 @@ const PricingSection = () => {
     <section id="precio" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-card/50" />
       <div className="max-w-4xl mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Inversión en Tu <span className="text-gradient">Desarrollo Profesional</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Acceso completo de por vida, con un solo pago
+          </p>
+        </div>
+
         <div className="bg-background border border-border rounded-3xl overflow-hidden shadow-2xl">
           <div className="bg-card p-4 text-center border-b border-border">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">
