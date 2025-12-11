@@ -1,4 +1,4 @@
-import { CheckCircle, ArrowRight, BookOpen, Shield } from "lucide-react";
+import { CheckCircle, TrendingUp, BookOpen, Shield } from "lucide-react";
 
 const features = [
   {
@@ -9,7 +9,7 @@ const features = [
   {
     title: "Mejora tu Tasa de Éxito",
     description: "Técnicas probadas que aumentan significativamente tus resultados en cada paciente.",
-    icon: ArrowRight,
+    icon: TrendingUp,
   },
   {
     title: "Casos Reales",
