@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-border text-center text-muted-foreground">
-        © 2025 Excellence Dental Academy. Todos los derechos reservados.
+        © 2025 <span className="text-foreground font-medium">Excellence Dental Academy</span>. Todos los derechos reservados.
       </div>
     </footer>
   );
