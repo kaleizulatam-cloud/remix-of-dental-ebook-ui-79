@@ -5,22 +5,37 @@ const faqs = [
   {
     question: "¿Cómo recibiré el ebook después de la compra?",
     answer:
-      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga directa en formato PDF. El acceso es de por vida.",
+      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga del ebook en formato PDF. El acceso es instantáneo y podrás descargarlo en todos tus dispositivos.",
   },
   {
     question: "¿En qué dispositivos puedo leer el ebook?",
     answer:
-      "El ebook está en formato PDF, por lo que puedes leerlo en cualquier dispositivo: computadora, tablet, smartphone o e-reader que soporte PDF.",
+      "El ebook está en formato PDF universal, compatible con cualquier dispositivo: computadoras (Windows, Mac, Linux), tablets, smartphones (iOS, Android) y lectores de ebooks. Puedes leerlo con cualquier aplicación de PDF.",
   },
   {
-    question: "¿El contenido está actualizado?",
+    question: "¿El contenido está actualizado con las últimas técnicas?",
     answer:
-      "Sí, el contenido está actualizado con las últimas técnicas y protocolos validados científicamente en ortodonacia.",
+      "Sí, todo el contenido está basado en las investigaciones más recientes y protocolos validados científicamente. Incluye técnicas modernas de diagnóstico con tomografía y los métodos de tracción más efectivos utilizados actualmente.",
   },
   {
-    question: "¿Hay algún costo adicional?",
+    question: "¿Es adecuado para estudiantes de odontología?",
     answer:
-      "No, el pago único de USD 10 incluye todo el contenido del ebook sin costos adicionales ni suscripciones.",
+      "Este ebook está diseñado tanto para estudiantes avanzados como para profesionales ya establecidos. El contenido progresivo permite que estudiantes comprendan los fundamentos mientras que los ortodoncistas experimentados pueden profundizar en técnicas especializadas.",
+  },
+  {
+    question: "¿Hay algún costo adicional o suscripción?",
+    answer:
+      "No. El precio de USD 10 es un pago único que te da acceso completo y permanente al ebook. No hay costos ocultos, suscripciones mensuales ni cargos adicionales de ningún tipo.",
+  },
+  {
+    question: "¿Puedo imprimir el ebook?",
+    answer:
+      "Sí, el archivo PDF te permite imprimirlo si lo prefieres. Puedes imprimir el documento completo o solo las secciones que necesites para tu consulta o estudio.",
+  },
+  {
+    question: "¿Ofrecen garantía de devolución?",
+    answer:
+      "Sí, ofrecemos una garantía de 7 días. Si el contenido no cumple con tus expectativas profesionales, puedes solicitar un reembolso completo dentro de los primeros 7 días después de tu compra.",
   },
 ];
 
@@ -34,9 +49,14 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-20 bg-background">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Preguntas <span className="text-gradient">Frecuentes</span>
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Preguntas <span className="text-gradient">Frecuentes</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Respuestas a las dudas más comunes sobre el ebook
+          </p>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
@@ -51,17 +71,23 @@ const FAQSection = () => {
                 <span className="font-semibold text-foreground pr-4">
                   {faq.question}
                 </span>
-                {openFaq === idx ? (
-                  <ChevronDown className="text-primary shrink-0" />
-                ) : (
-                  <ChevronRight className="text-muted-foreground shrink-0" />
-                )}
+                <ChevronDown 
+                  className={`shrink-0 transition-transform duration-300 ease-out ${
+                    openFaq === idx ? "text-primary rotate-180" : "text-muted-foreground rotate-0"
+                  }`}
+                />
               </button>
-              {openFaq === idx && (
-                <div className="px-5 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
-                  {faq.answer}
+              <div 
+                className={`grid transition-all duration-300 ease-out ${
+                  openFaq === idx ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-5 pb-5 text-muted-foreground text-sm leading-relaxed border-t border-border pt-4">
+                    {faq.answer}
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </div>
