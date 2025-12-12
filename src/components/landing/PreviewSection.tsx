@@ -1,0 +1,119 @@
+import React, { useState } from 'react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
+
+const PreviewSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const pages = [
+    { 
+      id: 1, 
+      type: 'cover', 
+      src: 'https://placehold.co/400x560/06b6d4/0f172a?text=Capa+Tracción', 
+      alt: 'Capa do Ebook' 
+    },
+    { 
+      id: 2, 
+      type: 'page', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Índice+Detallado', 
+      alt: 'Índice' 
+    },
+    { 
+      id: 3, 
+      type: 'page', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Introducción+Clínica', 
+      alt: 'Introdução' 
+    },
+    { 
+      id: 4, 
+      type: 'page', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Clasificación+Caninos', 
+      alt: 'Conteúdo Interno' 
+    },
+    { 
+      id: 5, 
+      type: 'page', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Casos+Reales', 
+      alt: 'Casos Reales' 
+    }
+  ];
+
+  const nextSlide = () => {
+    if (currentSlide < pages.length - 2) {
+      setCurrentSlide(curr => curr + 1);
+    } else {
+      setCurrentSlide(0);
+    }
+  };
+
+  return (
+    <section className="py-24 bg-[#050B14] overflow-hidden relative">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center mb-16 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+            Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Ebook</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-light leading-relaxed">
+            Explora las primeras páginas y descubre el contenido de alta calidad que te espera
+          </p>
+        </div>
+
+        {/* Carrossel de Páginas */}
+        <div className="relative mb-20 group">
+          
+          {/* Container das Imagens */}
+          <div className="overflow-hidden px-4 md:px-0">
+            <div 
+              className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform"
+              style={{ transform: `translateX(-${currentSlide * 340}px)` }}
+            >
+              {pages.map((page) => (
+                <div 
+                  key={page.id} 
+                  className={`
+                    flex-shrink-0 w-[300px] md:w-[380px] h-[450px] md:h-[540px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
+                    ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
+                    hover:scale-[1.02]
+                  `}
+                >
+                  <img 
+                    src={page.src} 
+                    alt={page.alt} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Botão de Navegação (Seta Direita) */}
+          <button 
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 bg-[#0F172A] text-foreground p-4 rounded-full shadow-2xl border border-border hover:bg-slate-800 hover:border-primary hover:text-primary transition-all duration-300 hidden md:flex items-center justify-center group-hover:translate-x-0"
+            aria-label="Ver más páginas"
+          >
+            <ChevronRight size={32} />
+          </button>
+
+          {/* Gradiente de Fade na direita */}
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050B14] to-transparent pointer-events-none z-10 hidden md:block"></div>
+        </div>
+
+        {/* CTA Bottom */}
+        <div className="flex flex-col items-center justify-center gap-4">
+          <button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold py-4 px-10 rounded-lg flex items-center gap-2 shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95 w-full md:w-auto justify-center">
+            Obtener Ebook Completo por USD 10 <ArrowRight size={20} strokeWidth={2.5} />
+          </button>
+          
+          <p className="text-muted-foreground text-sm font-medium">
+            40+ páginas de contenido profesional validado científicamente
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default PreviewSection;
