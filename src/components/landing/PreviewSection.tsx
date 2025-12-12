@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PreviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,6 +45,14 @@ const PreviewSection = () => {
     }
   };
 
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(curr => curr - 1);
+    } else {
+      setCurrentSlide(pages.length - 2);
+    }
+  };
+
   return (
     <section className="py-24 bg-[#050B14] overflow-hidden relative">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,6 +94,15 @@ const PreviewSection = () => {
               ))}
             </div>
           </div>
+
+          {/* Botão de Navegação (Seta Esquerda) */}
+          <button 
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 bg-[#0F172A] text-foreground p-4 rounded-full shadow-2xl border border-border hover:bg-slate-800 hover:border-primary hover:text-primary transition-all duration-300 hidden md:flex items-center justify-center group-hover:translate-x-0"
+            aria-label="Ver páginas anteriores"
+          >
+            <ChevronLeft size={32} />
+          </button>
 
           {/* Botão de Navegação (Seta Direita) */}
           <button 
