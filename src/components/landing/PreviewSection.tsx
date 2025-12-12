@@ -40,16 +40,12 @@ const PreviewSection = () => {
   const nextSlide = () => {
     if (currentSlide < pages.length - 2) {
       setCurrentSlide(curr => curr + 1);
-    } else {
-      setCurrentSlide(0);
     }
   };
 
   const prevSlide = () => {
     if (currentSlide > 0) {
       setCurrentSlide(curr => curr - 1);
-    } else {
-      setCurrentSlide(pages.length - 2);
     }
   };
 
@@ -82,7 +78,7 @@ const PreviewSection = () => {
                   className={`
                     flex-shrink-0 w-[300px] md:w-[380px] h-[450px] md:h-[540px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
                     ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
-                    hover:scale-[1.02]
+                    hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]
                   `}
                 >
                   <img 
@@ -95,23 +91,27 @@ const PreviewSection = () => {
             </div>
           </div>
 
-          {/* Botão de Navegação (Seta Esquerda) */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 bg-[#0F172A] text-foreground p-4 rounded-full shadow-2xl border border-border hover:bg-slate-800 hover:border-primary hover:text-primary transition-all duration-300 hidden md:flex items-center justify-center group-hover:translate-x-0"
-            aria-label="Ver páginas anteriores"
-          >
-            <ChevronLeft size={32} />
-          </button>
+          {/* Botão de Navegação (Seta Esquerda) - só aparece quando currentSlide > 0 */}
+          {currentSlide > 0 && (
+            <button 
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-3 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 hidden md:flex items-center justify-center"
+              aria-label="Ver páginas anteriores"
+            >
+              <ChevronLeft size={24} />
+            </button>
+          )}
 
           {/* Botão de Navegação (Seta Direita) */}
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 bg-[#0F172A] text-foreground p-4 rounded-full shadow-2xl border border-border hover:bg-slate-800 hover:border-primary hover:text-primary transition-all duration-300 hidden md:flex items-center justify-center group-hover:translate-x-0"
-            aria-label="Ver más páginas"
-          >
-            <ChevronRight size={32} />
-          </button>
+          {currentSlide < pages.length - 2 && (
+            <button 
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-3 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 hidden md:flex items-center justify-center"
+              aria-label="Ver más páginas"
+            >
+              <ChevronRight size={24} />
+            </button>
+          )}
 
           {/* Gradiente de Fade na direita */}
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050B14] to-transparent pointer-events-none z-10 hidden md:block"></div>
