@@ -37,8 +37,11 @@ const PreviewSection = () => {
     }
   ];
 
+  // Calcula o máximo de slides baseado em quantas páginas cabem na tela
+  const maxSlide = pages.length - 3; // Para quando a última página estiver visível
+
   const nextSlide = () => {
-    if (currentSlide < pages.length - 2) {
+    if (currentSlide < maxSlide) {
       setCurrentSlide(curr => curr + 1);
     }
   };
@@ -50,33 +53,33 @@ const PreviewSection = () => {
   };
 
   return (
-    <section className="py-24 bg-[#050B14] overflow-hidden relative">
+    <section className="py-16 bg-[#0A1628] overflow-hidden relative">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+        <div className="text-center mb-10 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Ebook</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto font-light leading-relaxed">
             Explora las primeras páginas y descubre el contenido de alta calidad que te espera
           </p>
         </div>
 
         {/* Carrossel de Páginas */}
-        <div className="relative mb-20 group">
+        <div className="relative mb-12 group">
           
           {/* Container das Imagens */}
           <div className="overflow-hidden px-4 md:px-0">
             <div 
-              className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform"
-              style={{ transform: `translateX(-${currentSlide * 380}px)` }}
+              className="flex gap-5 transition-transform duration-500 ease-in-out will-change-transform"
+              style={{ transform: `translateX(-${currentSlide * 360}px)` }}
             >
               {pages.map((page) => (
                 <div 
                   key={page.id} 
                   className={`
-                    flex-shrink-0 w-[300px] md:w-[380px] h-[450px] md:h-[540px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
+                    flex-shrink-0 w-[280px] md:w-[340px] h-[400px] md:h-[480px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
                     ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
                     hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
@@ -103,7 +106,7 @@ const PreviewSection = () => {
           )}
  
           {/* Botão de Navegação (Seta Direita) */}
-          {currentSlide < pages.length - 2 && (
+          {currentSlide < maxSlide && (
             <button 
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 hidden md:flex items-center justify-center"
