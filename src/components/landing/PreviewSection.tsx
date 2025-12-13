@@ -34,11 +34,57 @@ const PreviewSection = () => {
       type: 'page', 
       src: 'https://placehold.co/400x560/ffffff/333333?text=Casos+Reales', 
       alt: 'Casos Reales' 
+    },
+    { 
+      id: 6, 
+      type: 'page', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Protocolos+Avanzados', 
+      alt: 'Protocolos avanzados' 
     }
   ];
 
-  // Calcula o máximo de slides baseado em quantas páginas cabem na tela
-  const maxSlide = pages.length - 3; // Para quando a última página estiver visível
+  const [maxSlide, setMaxSlide] = useState(0);
+  const [slideStep, setSlideStep] = useState(360);
+  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const trackRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    const updateMetrics = () => {
+      const container = containerRef.current;
+      const track = trackRef.current;
+
+      if (!container || !track) return;
+
+      const containerWidth = container.offsetWidth;
+      const children = track.children;
+      if (children.length < 2) return;
+
+      const first = children[0] as HTMLElement;
+      const second = children[1] as HTMLElement;
+
+      const cardWidth = first.offsetWidth;
+      const stepBetween = second.offsetLeft - first.offsetLeft;
+
+      if (cardWidth <= 0 || stepBetween <= 0) return;
+
+      const desiredSliver = cardWidth * 0.2; // ~1/5 da próxima página
+      const adjustedStep = Math.max(1, stepBetween - desiredSliver);
+
+      const trackWidth = track.scrollWidth;
+      const availableScroll = Math.max(0, trackWidth - containerWidth);
+      const computedMaxSlide = Math.min(
+        pages.length - 3,
+        Math.max(0, Math.floor(availableScroll / adjustedStep))
+      );
+
+      setSlideStep(adjustedStep);
+      setMaxSlide(computedMaxSlide);
+    };
+
+    updateMetrics();
+    window.addEventListener('resize', updateMetrics);
+    return () => window.removeEventListener('resize', updateMetrics);
+  }, []);
 
   const nextSlide = () => {
     if (currentSlide < maxSlide) {
@@ -70,10 +116,11 @@ const PreviewSection = () => {
         <div className="relative mb-12 group">
           
           {/* Container das Imagens */}
-          <div className="overflow-hidden px-4 md:px-0">
+          <div ref={containerRef} className="overflow-hidden px-4 md:px-0">
             <div 
+              ref={trackRef}
               className="flex gap-5 transition-transform duration-500 ease-in-out will-change-transform"
-              style={{ transform: `translateX(-${currentSlide * 360}px)` }}
+              style={{ transform: `translateX(-${currentSlide * slideStep}px)` }}
             >
               {pages.map((page) => (
                 <div 
