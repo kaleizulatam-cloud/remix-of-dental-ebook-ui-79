@@ -8,37 +8,37 @@ const PreviewSection = () => {
     { 
       id: 1, 
       type: 'cover', 
-      src: 'https://placehold.co/400x560/06b6d4/0f172a', 
+      src: 'https://placehold.co/400x560/06b6d4/0f172a?text=Capa+Tracción', 
       alt: 'Capa do Ebook' 
     },
     { 
       id: 2, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Índice+Detallado', 
       alt: 'Índice' 
     },
     { 
       id: 3, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Introducción+Clínica', 
       alt: 'Introdução' 
     },
     { 
       id: 4, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Clasificación+Caninos', 
       alt: 'Conteúdo Interno' 
     },
     { 
       id: 5, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333', 
+      src: 'https://placehold.co/400x560/ffffff/333333?text=Casos+Reales', 
       alt: 'Casos Reales' 
     }
   ];
 
   // Calcula o máximo de slides baseado em quantas páginas cabem na tela
-  const maxSlide = Math.min(3, pages.length - 1);
+  const maxSlide = pages.length - 3; // Para quando a última página estiver visível
 
   const nextSlide = () => {
     if (currentSlide < maxSlide) {
@@ -70,7 +70,7 @@ const PreviewSection = () => {
         <div className="relative mb-12 group">
           
           {/* Container das Imagens */}
-          <div className="overflow-hidden px-4 md:px-0 md:max-w-[700px] md:mx-auto">
+          <div className="overflow-hidden px-4 md:px-0">
             <div 
               className="flex gap-5 transition-transform duration-500 ease-in-out will-change-transform"
               style={{ transform: `translateX(-${currentSlide * 360}px)` }}
