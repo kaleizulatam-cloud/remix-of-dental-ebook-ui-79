@@ -70,7 +70,7 @@ const PreviewSection = () => {
           <div className="overflow-hidden px-4 md:px-0">
             <div 
               className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform"
-              style={{ transform: `translateX(-${currentSlide * 340}px)` }}
+              style={{ transform: `translateX(-${currentSlide * 380}px)` }}
             >
               {pages.map((page) => (
                 <div 
@@ -78,7 +78,7 @@ const PreviewSection = () => {
                   className={`
                     flex-shrink-0 w-[300px] md:w-[380px] h-[450px] md:h-[540px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
                     ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
-                    hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)]
+                    hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
                 >
                   <img 
@@ -95,21 +95,21 @@ const PreviewSection = () => {
           {currentSlide > 0 && (
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-3 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 hidden md:flex items-center justify-center"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 hidden md:flex items-center justify-center"
               aria-label="Ver páginas anteriores"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} strokeWidth={2.5} />
             </button>
           )}
-
+ 
           {/* Botão de Navegação (Seta Direita) */}
           {currentSlide < pages.length - 2 && (
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-3 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground transition-all duration-300 hidden md:flex items-center justify-center"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 hidden md:flex items-center justify-center"
               aria-label="Ver más páginas"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} strokeWidth={2.5} />
             </button>
           )}
 
