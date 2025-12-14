@@ -67,8 +67,8 @@ const PreviewSection = () => {
 
       if (cardWidth <= 0 || stepBetween <= 0) return;
 
-      const desiredSliver = cardWidth * 0.2; // ~1/5 da próxima página
-      const adjustedStep = Math.max(1, stepBetween - desiredSliver);
+      const desiredSliver = cardWidth * 0.2; // exatamente 1/5 da próxima página
+      const adjustedStep = stepBetween + cardWidth - desiredSliver; // mostra só 1/5
 
       const trackWidth = track.scrollWidth;
       const availableScroll = Math.max(0, trackWidth - containerWidth);
@@ -164,7 +164,7 @@ const PreviewSection = () => {
           )}
 
           {/* Gradiente de Fade na direita */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#050B14] to-transparent pointer-events-none z-10 hidden md:block"></div>
+          
         </div>
 
         {/* CTA Bottom */}
