@@ -43,48 +43,25 @@ const PreviewSection = () => {
     }
   ];
 
-  const [maxSlide, setMaxSlide] = useState(0);
-  const [slideStep, setSlideStep] = useState(360);
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
+  const maxSlide = 3; // permite 3 cliques na seta
+  const [slideStep, setSlideStep] = useState(0);
   const trackRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    const updateMetrics = () => {
-      const container = containerRef.current;
+    const updateStep = () => {
       const track = trackRef.current;
+      if (!track || track.children.length < 2) return;
 
-      if (!container || !track) return;
-
-      const containerWidth = container.offsetWidth;
-      const children = track.children;
-      if (children.length < 2) return;
-
-      const first = children[0] as HTMLElement;
-      const second = children[1] as HTMLElement;
-
-      const cardWidth = first.offsetWidth;
-      const stepBetween = second.offsetLeft - first.offsetLeft;
-
-      if (cardWidth <= 0 || stepBetween <= 0) return;
-
-      const desiredSliver = cardWidth * 0.2; // exatamente 1/5 da próxima página
-      const gapSize = 24; // gap-6 = 24px
-      const adjustedStep = (cardWidth + gapSize) * 3 + desiredSliver; // 3 cards + gap + só 1/5 visível
-
-      const trackWidth = track.scrollWidth;
-      const availableScroll = Math.max(0, trackWidth - containerWidth);
-      const computedMaxSlide = Math.min(
-        pages.length - 3,
-        Math.max(0, Math.floor(availableScroll / adjustedStep))
-      );
-
-      setSlideStep(adjustedStep);
-      setMaxSlide(computedMaxSlide);
+      const first = track.children[0] as HTMLElement;
+      const second = track.children[1] as HTMLElement;
+      const step = second.offsetLeft - first.offsetLeft;
+      
+      if (step > 0) setSlideStep(step);
     };
 
-    updateMetrics();
-    window.addEventListener('resize', updateMetrics);
-    return () => window.removeEventListener('resize', updateMetrics);
+    updateStep();
+    window.addEventListener('resize', updateStep);
+    return () => window.removeEventListener('resize', updateStep);
   }, []);
 
   const nextSlide = () => {
@@ -117,7 +94,7 @@ const PreviewSection = () => {
         <div className="relative mb-12 group">
           
           {/* Container das Imagens */}
-          <div ref={containerRef} className="overflow-hidden">
+          <div className="overflow-hidden">
             <div 
               ref={trackRef}
               className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform pl-4 md:pl-8"
@@ -127,7 +104,7 @@ const PreviewSection = () => {
                 <div 
                   key={page.id} 
                   className={`
-                    flex-shrink-0 w-[300px] md:w-[380px] h-[420px] md:h-[530px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
+                    flex-shrink-0 w-[280px] md:w-[320px] h-[390px] md:h-[450px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
                     ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
                     hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
