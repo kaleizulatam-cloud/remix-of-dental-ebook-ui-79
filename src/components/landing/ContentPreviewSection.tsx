@@ -1,22 +1,42 @@
 import { CheckCircle } from "lucide-react";
 import bookPreview from "@/assets/book-preview.png";
 
-const contentItems = [
+const contentBlocks = [
   {
     title: "Fundamentos y Diagnóstico",
-    description: "Técnicas detalladas e ilustraciones para un diagnóstico preciso.",
+    items: [
+      "Definición y tiempo ideal de erupción",
+      "Importancia del diagnóstico precoz",
+      "Prevención de secuelas",
+      "Evaluación del pronóstico",
+    ],
   },
   {
     title: "Técnicas de Evaluación",
-    description: "Métodos de evaluación clínica y radiográfica avanzados.",
+    items: [
+      "Uso de radiografías en diagnóstico",
+      "Aplicación de tomografía computarizada",
+      "Interpretación de imágenes",
+      "Interceptación temprana de caninos",
+    ],
   },
   {
     title: "Protocolos de Tratamiento",
-    description: "Guías paso a paso para cada tipo de retención.",
+    items: [
+      "Espacio necesario para erupción",
+      "Técnicas de tracción ortodóncica",
+      "Biomecánica segura y controlada",
+      "Tratamiento de caninos impactados",
+    ],
   },
   {
-    title: "Estudios de caso completos",
-    description: "Casos clínicos documentados con seguimiento completo.",
+    title: "Además, obtendrás acceso a:",
+    items: [
+      "Decisiones según pronóstico: mantener, traccionar o extraer",
+      "Estudios de caso con documentación fotográfica completa",
+      "Resumen de protocolos de prevención e interceptación",
+      "Guías paso a paso para cada procedimiento clínico",
+    ],
   },
 ];
 
@@ -24,44 +44,44 @@ const ContentPreviewSection = () => {
   return (
     <section id="contenido" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="order-2 lg:order-1">
+        {/* Header centralizado */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Contenido del <span className="text-gradient">Ebook</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Acceso completo a protocolos clínicos validados y casos documentados paso a paso.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Imagem do livro */}
+          <div className="flex justify-center lg:justify-start">
             <img
               src={bookPreview}
-              className="rounded-xl shadow-lg border border-border w-full"
+              className="rounded-xl shadow-lg border border-border w-full max-w-md"
               alt="Book Preview"
             />
           </div>
-          <div className="order-1 lg:order-2">
-            <span className="text-primary font-semibold tracking-wide uppercase text-sm">
-              Lo que te espera
-            </span>
-            <h2 className="text-3xl font-bold mt-2 mb-6">
-              Contenido del <span className="text-gradient">Ebook</span>
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Acceso completo a protocolos clínicos validados y casos
-              documentados paso a paso.
-            </p>
 
-            <div className="space-y-4">
-              {contentItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-3 bg-card p-4 rounded-lg border border-border hover:border-primary/20 transition-colors"
-                >
-                  <div className="mt-1 text-primary shrink-0">
-                    <CheckCircle size={18} />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground">{item.title}</h4>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Blocos de conteúdo */}
+          <div className="space-y-6">
+            {contentBlocks.map((block, index) => (
+              <div
+                key={index}
+                className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
+              >
+                <h4 className="font-semibold text-foreground mb-3">{block.title}</h4>
+                <ul className="space-y-2">
+                  {block.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-2">
+                      <CheckCircle size={16} className="text-primary mt-0.5 shrink-0" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
