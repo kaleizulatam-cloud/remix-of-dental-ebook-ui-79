@@ -55,15 +55,6 @@ const ContentPreviewSection = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Imagem do livro */}
-          <div className="flex justify-center lg:justify-start">
-            <img
-              src={bookPreview}
-              className="rounded-xl shadow-lg border border-border w-full max-w-md"
-              alt="Book Preview"
-            />
-          </div>
-
           {/* Blocos de conteúdo */}
           <div className="space-y-6">
             {contentBlocks.map((block, index) => (
@@ -71,7 +62,7 @@ const ContentPreviewSection = () => {
                 key={index}
                 className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
               >
-                <h4 className="font-semibold text-foreground mb-3">{block.title}</h4>
+                <h4 className="font-semibold text-foreground text-lg mb-3">{block.title}</h4>
                 <ul className="space-y-2">
                   {block.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-2">
@@ -82,6 +73,15 @@ const ContentPreviewSection = () => {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Imagem do livro */}
+          <div className="flex justify-center lg:justify-end">
+            <img
+              src={bookPreview}
+              className="rounded-xl shadow-lg border border-border w-full max-w-md"
+              alt="Book Preview"
+            />
           </div>
         </div>
       </div>
