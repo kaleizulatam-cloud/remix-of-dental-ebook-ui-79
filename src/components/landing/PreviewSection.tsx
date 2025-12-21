@@ -55,7 +55,7 @@ const PreviewSection = () => {
 
       const cards = Array.from(track.children) as HTMLElement[];
       const cardWidth = cards[0].offsetWidth;
-      const gap = 24; // gap-6 = 24px
+      const gap = 16; // gap-4 = 16px
       const containerWidth = container.offsetWidth;
       const trackWidth = cards.length * cardWidth + (cards.length - 1) * gap;
       
@@ -117,14 +117,14 @@ const PreviewSection = () => {
           <div className="overflow-hidden">
             <div 
               ref={trackRef}
-              className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform pl-4 md:pl-8"
+              className="flex gap-4 transition-transform duration-500 ease-in-out will-change-transform pl-4 md:pl-8"
               style={{ transform: `translateX(-${translateX}px)` }}
             >
               {pages.map((page) => (
                 <div 
                   key={page.id} 
                   className={`
-                    flex-shrink-0 w-[280px] md:w-[320px] h-[390px] md:h-[450px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
+                    flex-shrink-0 w-[240px] md:w-[280px] h-[336px] md:h-[392px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
                     ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
                     hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
@@ -171,7 +171,7 @@ const PreviewSection = () => {
             Obtener Ebook Completo por USD 10 <ArrowRight size={20} strokeWidth={2.5} />
           </button>
           
-          <p className="text-muted-foreground text-sm font-medium">
+          <p className="text-muted-foreground text-sm font-medium text-center">
             40+ páginas de contenido profesional validado científicamente
           </p>
         </div>
