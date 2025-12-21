@@ -27,8 +27,18 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="precio" className="py-20 bg-background flex justify-center items-center">
+    <section id="precio" className="py-20 bg-background flex flex-col items-center">
       
+      {/* Headline */}
+      <div className="text-center mb-12 px-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          Inversión en Tu Desarrollo Profesional
+        </h1>
+        <h2 className="text-lg md:text-xl text-muted-foreground">
+          Acceso completo de por vida, con un solo pago
+        </h2>
+      </div>
+
       <div className="w-full max-w-[420px] bg-card border border-border/50 rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden mx-4">
         
         {/* Efeito de brilho no topo */}
