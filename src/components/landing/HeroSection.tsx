@@ -1,8 +1,35 @@
-import { ArrowRight, ShoppingCart, Users } from "lucide-react";
+import { ArrowRight, ShoppingCart, Users, ShoppingBag, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import ebookCover from "@/assets/ebook-cover.png";
 import dentalOfficeBg from "@/assets/dental-office-bg.jpg";
 
+const cities = [
+  "Buenos Aires", "Córdoba", "Ciudad de México", "Guadalajara",
+  "Lima", "Arequipa", "Madrid", "Barcelona",
+  "Santiago", "Valparaíso", "Bogotá", "Medellín"
+];
+
+const getRandomCity = () => cities[Math.floor(Math.random() * cities.length)];
+
 const HeroSection = () => {
+  const [isNotificationVisible, setIsNotificationVisible] = useState(false);
+  const [city, setCity] = useState(getRandomCity());
+
+  const showNotification = () => {
+    setCity(getRandomCity());
+    setIsNotificationVisible(true);
+    setTimeout(() => setIsNotificationVisible(false), 5000);
+  };
+
+  useEffect(() => {
+    const initialTimeout = setTimeout(() => showNotification(), 3000);
+    const interval = setInterval(() => showNotification(), 10 * 60 * 1000);
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, []);
+
   return (
     <section className="relative pt-20 pb-0 overflow-visible">
       {/* Background Image with Dark Overlay */}
@@ -47,6 +74,35 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Purchase Notification - Above Stats Bar */}
+      {isNotificationVisible && (
+        <div className="absolute bottom-20 right-6 z-30 animate-fade-in">
+          <div className="bg-background/95 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-2xl shadow-black/20 max-w-[280px]">
+            <button 
+              onClick={() => setIsNotificationVisible(false)}
+              className="absolute top-2 right-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <X size={14} />
+            </button>
+            
+            <div className="flex items-start gap-3">
+              <div className="bg-cyan-500/20 rounded-full p-2 flex-shrink-0">
+                <ShoppingBag size={18} className="text-cyan-400" />
+              </div>
+              
+              <div className="flex flex-col gap-1">
+                <span className="text-foreground font-bold text-base">
+                  ¡Nueva compra!
+                </span>
+                <span className="text-muted-foreground text-sm">
+                  Alguien desde <span className="text-cyan-400 font-medium">{city}</span> acaba de adquirir el ebook
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Stats Bar - Full Width Section Divider */}
       <div className="w-full relative z-20 mt-6 -mb-4">
