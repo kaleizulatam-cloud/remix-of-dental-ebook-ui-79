@@ -77,7 +77,7 @@ const HeroSection = () => {
 
       {/* Purchase Notification - Above Stats Bar */}
       {isNotificationVisible && (
-        <div className="absolute bottom-20 right-6 z-30 animate-fade-in">
+        <div className="absolute bottom-24 md:bottom-20 right-4 md:right-6 z-30 animate-fade-in">
           <div className="bg-background/95 backdrop-blur-md border border-border/50 rounded-xl p-4 shadow-2xl shadow-black/20 max-w-[280px]">
             <button 
               onClick={() => setIsNotificationVisible(false)}
