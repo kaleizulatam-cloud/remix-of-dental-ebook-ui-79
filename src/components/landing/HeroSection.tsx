@@ -50,27 +50,27 @@ const HeroSection = () => {
 
       {/* Stats Bar - Full Width Section Divider */}
       <div className="w-full relative z-20 mt-6 -mb-4">
-        <div className="flex justify-center gap-12 md:gap-24 bg-white/5 border-y border-white/10 py-6 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex items-center gap-3">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <ShoppingCart size={20} />
+        <div className="flex justify-center gap-6 md:gap-24 bg-white/5 border-y border-white/10 py-3 md:py-6 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="bg-primary/10 p-1.5 md:p-2 rounded-full text-primary">
+              <ShoppingCart size={18} className="md:w-5 md:h-5" />
             </div>
-            <div className="text-center">
-              <p className="text-xs text-slate-400 uppercase">
+            <div>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase leading-tight">
                 Ventas Totales
               </p>
-              <p className="text-xl font-bold text-white">705</p>
+              <p className="text-base md:text-xl font-bold text-white">705</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="bg-primary/10 p-2 rounded-full text-primary">
-              <Users size={20} />
+          <div className="flex items-center gap-2 md:gap-3">
+            <div className="bg-primary/10 p-1.5 md:p-2 rounded-full text-primary">
+              <Users size={18} className="md:w-5 md:h-5" />
             </div>
-            <div className="text-center">
-              <p className="text-xs text-slate-400 uppercase">
+            <div>
+              <p className="text-[10px] md:text-xs text-slate-400 uppercase leading-tight">
                 Profesionales Activos
               </p>
-              <p className="text-xl font-bold text-white">500+</p>
+              <p className="text-base md:text-xl font-bold text-white">500+</p>
             </div>
           </div>
         </div>
