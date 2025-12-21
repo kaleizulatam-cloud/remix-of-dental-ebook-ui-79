@@ -32,7 +32,7 @@ const PricingSection = () => {
       {/* Headline */}
       <div className="text-center mb-12 px-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-          Inversión en Tu Desarrollo Profesional
+          Inversión en Tu <span className="text-primary">Desarrollo Profesional</span>
         </h1>
         <h2 className="text-lg md:text-xl text-muted-foreground">
           Acceso completo de por vida, con un solo pago
