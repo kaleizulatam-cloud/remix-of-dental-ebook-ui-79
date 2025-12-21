@@ -17,16 +17,16 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-up">
+          <div className="space-y-6 animate-fade-up bg-cyan-900/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-cyan-500/20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO PARA PREVENIR TRATAMIENTOS INDEFINIDOS
             </h1>
-            <p className="text-lg text-slate-300 max-w-lg">
+            <p className="text-lg text-slate-200 max-w-lg">
               Diagnóstico preciso, prevención efectiva y tracción segura, paso a
               paso para tener resultados desde tu próximo paciente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-cyan-600 to-cyan-400">
+              <button className="group inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-cyan-400 to-cyan-300 hover:from-cyan-300 hover:to-cyan-200">
                 Quiero el Ebook
                 <ArrowRight
                   size={20}
