@@ -82,7 +82,7 @@ const PreviewSection = () => {
         
         {/* Header */}
         <div className="text-center mb-10 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Ebook</span>
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto font-light leading-relaxed">
