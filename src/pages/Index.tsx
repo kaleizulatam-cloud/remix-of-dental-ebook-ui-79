@@ -7,11 +7,13 @@ import ContentPreviewSection from "@/components/landing/ContentPreviewSection";
 import PricingSection from "@/components/landing/PricingSection";
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
+import { PurchaseNotification } from "@/components/landing/PurchaseNotification";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <Navbar />
+      <PurchaseNotification />
       <main>
         <HeroSection />
         <TestimonialsSection />
