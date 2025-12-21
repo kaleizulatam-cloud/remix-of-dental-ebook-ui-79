@@ -23,9 +23,6 @@ const Navbar = () => {
             <a href="#contenido" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Contenido
             </a>
-            <a href="#precio" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Precio
-            </a>
             <a href="#faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               FAQ
             </a>
@@ -61,12 +58,6 @@ const Navbar = () => {
               className="block px-3 py-2 text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary transition-colors"
             >
               Contenido
-            </a>
-            <a
-              href="#precio"
-              className="block px-3 py-2 text-muted-foreground hover:text-foreground rounded-lg hover:bg-secondary transition-colors"
-            >
-              Precio
             </a>
             <a
               href="#faq"
