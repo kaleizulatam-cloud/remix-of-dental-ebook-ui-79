@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PreviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [maxSlide, setMaxSlide] = useState(3);
+  const [translateX, setTranslateX] = useState(0);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const pages = [
     { 
@@ -43,26 +47,42 @@ const PreviewSection = () => {
     }
   ];
 
-  const maxSlide = 3; // permite 3 cliques na seta
-  const [slideStep, setSlideStep] = useState(0);
-  const trackRef = React.useRef<HTMLDivElement | null>(null);
-
-  React.useEffect(() => {
-    const updateStep = () => {
+  useEffect(() => {
+    const calculateTranslate = () => {
       const track = trackRef.current;
-      if (!track || track.children.length < 2) return;
+      const container = containerRef.current;
+      if (!track || !container || track.children.length < 2) return;
 
-      const first = track.children[0] as HTMLElement;
-      const second = track.children[1] as HTMLElement;
-      const step = second.offsetLeft - first.offsetLeft;
+      const cards = Array.from(track.children) as HTMLElement[];
+      const cardWidth = cards[0].offsetWidth;
+      const gap = 24; // gap-6 = 24px
+      const containerWidth = container.offsetWidth;
+      const trackWidth = cards.length * cardWidth + (cards.length - 1) * gap;
       
-      if (step > 0) setSlideStep(step);
+      // Calcula o máximo de translate para alinhar o último card à direita
+      const maxTranslate = trackWidth - containerWidth + 32; // 32px de padding
+      
+      // Calcula quantos slides são possíveis
+      const stepSize = cardWidth + gap;
+      const slides = Math.ceil(maxTranslate / stepSize);
+      setMaxSlide(slides);
+
+      // Calcula o translateX baseado no slide atual
+      if (currentSlide === 0) {
+        setTranslateX(0);
+      } else if (currentSlide >= slides) {
+        // Último slide - alinha o último card à direita
+        setTranslateX(maxTranslate);
+      } else {
+        // Slides intermediários
+        setTranslateX(currentSlide * stepSize);
+      }
     };
 
-    updateStep();
-    window.addEventListener('resize', updateStep);
-    return () => window.removeEventListener('resize', updateStep);
-  }, []);
+    calculateTranslate();
+    window.addEventListener('resize', calculateTranslate);
+    return () => window.removeEventListener('resize', calculateTranslate);
+  }, [currentSlide]);
 
   const nextSlide = () => {
     if (currentSlide < maxSlide) {
@@ -91,14 +111,14 @@ const PreviewSection = () => {
         </div>
 
         {/* Carrossel de Páginas */}
-        <div className="relative mb-12 group">
+        <div className="relative mb-12 group" ref={containerRef}>
           
           {/* Container das Imagens */}
           <div className="overflow-hidden">
             <div 
               ref={trackRef}
               className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform pl-4 md:pl-8"
-              style={{ transform: `translateX(-${currentSlide * slideStep}px)` }}
+              style={{ transform: `translateX(-${translateX}px)` }}
             >
               {pages.map((page) => (
                 <div 
