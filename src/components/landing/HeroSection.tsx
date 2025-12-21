@@ -4,7 +4,7 @@ import dentalOfficeBg from "@/assets/dental-office-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-24 pb-4 overflow-visible">
+    <section className="relative pt-20 pb-0 overflow-visible">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -49,7 +49,7 @@ const HeroSection = () => {
       </div>
 
       {/* Stats Bar - Full Width Section Divider */}
-      <div className="w-full relative z-20 mt-8 -mb-6">
+      <div className="w-full relative z-20 mt-6 -mb-4">
         <div className="flex justify-center gap-12 md:gap-24 bg-white/5 border-y border-white/10 py-6 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-full text-primary">
