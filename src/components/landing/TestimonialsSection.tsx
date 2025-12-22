@@ -10,31 +10,45 @@ import {
 const testimonials = [
   {
     id: 1,
-    text: "Impresionante la cantidad de información útil en 200 páginas. Las técnicas de interceptación temprana que aprendí ya las estoy aplicando con excelentes resultados en mi consulta.",
-    name: "Dra. Ana Martínez",
-    role: "Ortodoncista Certificada",
-    location: "Ciudad de México, México"
-  },
-  {
-    id: 2,
-    text: "Material muy completo y actualizado. Las imágenes radiográficas y tomográficas son de excelente calidad. Perfecto para ortodoncistas que quieren dominar este tema.",
-    name: "Dr. Roberto Silva",
-    role: "Ortodoncista",
-    location: "São Paulo, Brasil"
-  },
-  {
-    id: 3,
-    text: "La mejor inversión que he hecho en mi desarrollo profesional este año. Los protocolos son claros, validados científicamente y muy fáciles de implementar.",
-    name: "Dra. Carmen Rodríguez",
-    role: "Especialista en Ortodoncia",
+    text: "Contenido claro y aplicable. El protocolo me ayudó a actuar rápido en un caso de disnea severa que antes me habría bloqueado. Identifiqué edema cardiogénico en minutos y estabilicé con confianza. Muy recomendable.",
+    name: "Dra. Mariana López",
+    role: "Veterinário",
     location: "Santiago, Chile"
   },
   {
+    id: 2,
+    text: "Excelente guía clínica. Aprendí a clasificar el perfil hemodinámico y aplicar el tratamiento correcto sin improvisar. Ya la usé en dos pacientes con muy buenos resultados. Una inversión que se justifica sola.",
+    name: "Dr. Carlos Quispe",
+    role: "Veterinário",
+    location: "Lima, Perú"
+  },
+  {
+    id: 3,
+    text: "Antes derivaba todos los casos con sospecha cardíaca. Ahora tengo los pasos claros para estabilizar primero y referir solo cuando es necesario. El cambio en mi práctica fue inmediato. Lo recomiendo sin duda.",
+    name: "Dra. Lucía Fernández",
+    role: "Veterinário",
+    location: "Bogotá, Colombia"
+  },
+  {
     id: 4,
-    text: "Los casos clínicos documentados son increíbles. Finalmente encontré un recurso que explica la biomecánica de tracción de forma clara y práctica. Vale cada centavo.",
-    name: "Dr. Carlos Mendoza",
-    role: "Especialista en Ortodoncia",
+    text: "Por fin un material que explica cómo actuar en los primeros minutos críticos del edema pulmonar. Lo apliqué esta semana y el paciente mejoró en menos de 30 minutos. Recurso imprescindible para cualquier clínico.",
+    name: "Dr. Alejandro Rivas",
+    role: "Veterinário",
+    location: "Ciudad de México, México"
+  },
+  {
+    id: 5,
+    text: "El protocolo paso a paso me dio seguridad para actuar sin esperar la ecocardiografía. Y los diagramas clínicos ayudan muchísimo a entender la fisiopatología. Excelente para quien trabaja bajo presión.",
+    name: "Dra. Camila Torres",
+    role: "Veterinário",
     location: "Buenos Aires, Argentina"
+  },
+  {
+    id: 6,
+    text: "Guía muy completa y visual. Las ilustraciones anatómicas y esquemas de conducta son de gran ayuda. Ideal para veterinarios que buscan tomar decisiones rápidas con base científica.",
+    name: "Dr. Juan Pablo Moreno",
+    role: "Veterinário",
+    location: "Madrid, España"
   }
 ];
 
@@ -49,7 +63,7 @@ const TestimonialsSection = () => {
             Lo Que Dicen <span className="text-gradient drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">Los Profesionales</span>
           </h2>
           <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto font-light">
-            Más de 500 ortodoncistas ya están aplicando estos protocolos en su práctica clínica
+            Más de 500 veterinários ya están aplicando estos protocolos en su práctica clínica
           </p>
         </div>
 
