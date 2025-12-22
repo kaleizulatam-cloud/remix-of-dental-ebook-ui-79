@@ -12,6 +12,11 @@ const PreviewSection = () => {
   // Touch/swipe handling
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
+  
+  // Mouse drag handling
+  const isDragging = useRef<boolean>(false);
+  const dragStartX = useRef<number>(0);
+  const dragStartTranslate = useRef<number>(0);
 
   const pages = [
     { 
@@ -125,9 +130,65 @@ const PreviewSection = () => {
     }
   };
 
+  // Mouse drag handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    dragStartX.current = e.clientX;
+    dragStartTranslate.current = translateX;
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grabbing';
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+    const diff = dragStartX.current - e.clientX;
+    const track = trackRef.current;
+    const container = containerRef.current;
+    if (!track || !container) return;
+
+    const cards = Array.from(track.children) as HTMLElement[];
+    const cardWidth = cards[0]?.offsetWidth || 280;
+    const gap = 16;
+    const containerWidth = container.offsetWidth;
+    const trackWidth = cards.length * cardWidth + (cards.length - 1) * gap;
+    const maxTranslate = Math.max(0, trackWidth - containerWidth + 32);
+
+    let newTranslate = dragStartTranslate.current + diff;
+    newTranslate = Math.max(0, Math.min(newTranslate, maxTranslate));
+    setTranslateX(newTranslate);
+  };
+
+  const handleMouseUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+    }
+    
+    // Snap to nearest slide
+    const track = trackRef.current;
+    if (!track || track.children.length < 2) return;
+    const cards = Array.from(track.children) as HTMLElement[];
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 16;
+    const stepSize = cardWidth + gap;
+    const nearestSlide = Math.round(translateX / stepSize);
+    setCurrentSlide(Math.max(0, Math.min(nearestSlide, maxSlide)));
+  };
+
+  const handleMouseLeave = () => {
+    if (isDragging.current) {
+      handleMouseUp();
+    }
+  };
+
   // Toggle arrows on touch/click (mobile)
   const handleCarouselTap = () => {
-    setShowArrows(prev => !prev);
+    if (!isDragging.current) {
+      setShowArrows(prev => !prev);
+    }
   };
 
   // Hide arrows after 3 seconds
@@ -154,11 +215,15 @@ const PreviewSection = () => {
 
         {/* Carrossel de Páginas */}
         <div 
-          className="relative mb-12 group" 
+          className="relative mb-12 group cursor-grab select-none" 
           ref={containerRef}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
           onClick={handleCarouselTap}
         >
           
