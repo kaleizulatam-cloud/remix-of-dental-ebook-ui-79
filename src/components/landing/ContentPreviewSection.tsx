@@ -69,8 +69,10 @@ const ContentPreviewSection = () => {
                   key={index}
                   className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
                 >
-                  <h4 className="font-semibold text-foreground text-lg mb-3 flex items-center gap-2">
-                    <IconComponent size={20} className="text-primary" />
+                  <h4 className="font-semibold text-foreground text-lg mb-3 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center">
+                      <IconComponent size={18} className="text-primary" />
+                    </span>
                     {block.title}
                   </h4>
                   <ul className="space-y-2">
