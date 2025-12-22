@@ -24,11 +24,6 @@ const Footer = () => {
                 Precio
               </a>
             </li>
-            <li>
-              <a href="#" className="hover:text-primary transition-colors">
-                Política de Privacidad
-              </a>
-            </li>
           </ul>
         </div>
         <div>
