@@ -46,10 +46,11 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-primary/20">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
-              El método definitivo que aumenta en 248% la sobrevida de pacientes con edema pulmonar cardiogénico
+              EL MÉTODO DEFINITIVO PARA PREVENIR TRATAMIENTOS INDEFINIDOS
             </h1>
             <p className="text-lg text-slate-200 max-w-lg">
-              Domina el paso a paso para estabilizar en los primeros minutos — sin cometer errores fatales
+              Diagnóstico preciso, prevención efectiva y tracción segura, paso a
+              paso para tener resultados desde tu próximo paciente.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="group inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary to-orange-400">
