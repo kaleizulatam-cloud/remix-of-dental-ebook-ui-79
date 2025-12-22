@@ -19,10 +19,9 @@ const PricingSection = () => {
   const formatTime = (val: number) => val.toString().padStart(2, '0');
 
   const benefits = [
-    "Ebook completo en formato PDF (30+ páginas)",
-    "Acceso inmediato después del pago",
-    "Protocolos paso a paso con imágenes",
-    "Técnicas de biomecánica validadas",
+    "Guía completa en formato PDF (30+ páginas)",
+    "Protocolos con imágenes y esquemas anatómicos",
+    "Conductas listas para aplicar en emergencias reales",
     "Compatible con todos los dispositivos"
   ];
 
