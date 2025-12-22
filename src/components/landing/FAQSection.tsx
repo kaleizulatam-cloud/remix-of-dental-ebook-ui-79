@@ -5,37 +5,37 @@ const faqs = [
   {
     question: "¿Cómo recibiré el ebook después de la compra?",
     answer:
-      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga del ebook en formato PDF. El acceso es instantáneo y podrás descargarlo en todos tus dispositivos.",
+      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga del Guía en formato PDF. El acceso es instantáneo y podrás abrirlo en todos tus dispositivos.",
   },
   {
     question: "¿En qué dispositivos puedo leer el ebook?",
     answer:
-      "El ebook está en formato PDF universal, compatible con cualquier dispositivo: computadoras (Windows, Mac, Linux), tablets, smartphones (iOS, Android) y lectores de ebooks. Puedes leerlo con cualquier aplicación de PDF.",
+      "El archivo está en formato PDF universal, compatible con cualquier dispositivo: computadoras (Windows, Mac, Linux), tablets, smartphones (iOS, Android) y lectores de ebooks. No necesitas ningún programa especial.",
   },
   {
     question: "¿El contenido está actualizado con las últimas técnicas?",
     answer:
-      "Sí, todo el contenido está basado en las investigaciones más recientes y protocolos validados científicamente. Incluye técnicas modernas de diagnóstico con tomografía y los métodos de tracción más efectivos utilizados actualmente.",
+      "Sí. Todo el contenido está basado en protocolos clínicos actualizados y validados científicamente. Incluye clasificación hemodinámica, estabilización paso a paso, y manejo farmacológico según los estándares más recientes.",
   },
   {
-    question: "¿Es adecuado para estudiantes de odontología?",
+    question: "¿Es adecuado para estudiantes o veterinarios recién graduados?",
     answer:
-      "Este ebook está diseñado tanto para estudiantes avanzados como para profesionales ya establecidos. El contenido progresivo permite que estudiantes comprendan los fundamentos mientras que los ortodoncistas experimentados pueden profundizar en técnicas especializadas.",
+      "Sí. El Guía está diseñado para que cualquier clínico —desde principiantes hasta profesionales con experiencia— pueda aplicar los protocolos con seguridad. Incluso si no tienes ecocardiógrafo, podrás actuar desde el examen físico.",
   },
   {
     question: "¿Hay algún costo adicional o suscripción?",
     answer:
-      "No. El precio de USD 10 es un pago único que te da acceso completo y permanente al ebook. No hay costos ocultos, suscripciones mensuales ni cargos adicionales de ningún tipo.",
+      "No. El pago de USD 10 es único y te da acceso completo y vitalicio al Guía. Sin suscripciones mensuales, sin cargos ocultos, sin letra pequeña.",
   },
   {
     question: "¿Puedo imprimir el ebook?",
     answer:
-      "Sí, el archivo PDF te permite imprimirlo si lo prefieres. Puedes imprimir el documento completo o solo las secciones que necesites para tu consulta o estudio.",
+      "Claro. El PDF está listo para impresión. Puedes imprimirlo completo o solo las secciones que quieras tener a mano en tu consultorio o clínica.",
   },
   {
     question: "¿Ofrecen garantía de devolución?",
     answer:
-      "Sí, ofrecemos una garantía de 7 días. Si el contenido no cumple con tus expectativas profesionales, puedes solicitar un reembolso completo dentro de los primeros 7 días después de tu compra.",
+      "Sí. Tienes una garantía de 7 días. Si consideras que el contenido no aporta valor real a tu práctica clínica, te devolvemos el 100% de tu inversión. Sin preguntas. Sin burocracia.",
   },
 ];
 
