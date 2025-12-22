@@ -27,7 +27,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="precio" className="py-20 bg-background flex flex-col items-center">
+    <section id="precio" className="py-20 bg-background-alt flex flex-col items-center">
       
       {/* Headline */}
       <div className="text-center mb-12 px-4">
