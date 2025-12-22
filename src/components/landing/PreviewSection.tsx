@@ -205,7 +205,10 @@ const PreviewSection = () => {
   }, [showArrows]);
 
   return (
-    <section className="py-16 bg-[#0A1628] overflow-hidden relative">
+    <section className="py-16 bg-background-alt overflow-hidden relative">
+      {/* Efeitos de luz fosca */}
+      <div className="absolute top-16 left-10 w-48 h-48 bg-primary/[0.015] rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute bottom-24 right-16 w-56 h-56 bg-primary/[0.02] rounded-full blur-[100px] pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -262,7 +265,7 @@ const PreviewSection = () => {
           {currentSlide > 0 && (
             <button 
               onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-              className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
+              className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-card text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
                 ${showArrows ? 'flex' : 'hidden'} md:flex
               `}
               aria-label="Ver páginas anteriores"
@@ -275,7 +278,7 @@ const PreviewSection = () => {
           {currentSlide < maxSlide && (
             <button 
               onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-              className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
+              className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-card text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
                 ${showArrows ? 'flex' : 'hidden'} md:flex
               `}
               aria-label="Ver más páginas"
