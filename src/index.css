@@ -7,8 +7,8 @@
 @layer base {
   :root {
     --background: 200 52% 10%;
-    --background-alt: 200 52% 7%;
-    --background-subtle: 200 52% 13%;
+    --background-alt: 200 52% 9%;
+    --background-subtle: 200 52% 11%;
     --foreground: 210 40% 98%;
 
     --card: 200 52% 15%;
