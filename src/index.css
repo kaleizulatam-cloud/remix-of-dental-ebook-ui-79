@@ -6,67 +6,59 @@
 
 @layer base {
   :root {
-    /* Base Background - Azul Petróleo Profundo #1C4259 */
-    --background: 205 52% 23%;
+    --background: 222 84% 3%;
     --foreground: 210 40% 98%;
 
-    /* Card Surface - Glassmorphism darker #0F2532 */
-    --card: 205 55% 13%;
+    --card: 222 47% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 205 55% 13%;
+    --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    /* Primary/Brand - Turquesa Médio #2E90A6 */
-    --primary: 190 57% 42%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 190 65% 55%;
+    --primary: 187 94% 43%;
+    --primary-foreground: 222 84% 4%;
+    --primary-glow: 187 100% 60%;
 
-    /* Secondary - Variação mais escura #143040 */
-    --secondary: 205 52% 17%;
+    --secondary: 215 28% 17%;
     --secondary-foreground: 210 40% 98%;
 
-    /* Muted - Slate tones */
-    --muted: 205 40% 20%;
+    --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    /* Accent - Laranja Vibrante #F07F0F */
-    --accent: 28 89% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 187 94% 43%;
+    --accent-foreground: 222 84% 4%;
 
-    /* Destructive - Red (para timer) */
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    /* Borders & Input */
-    --border: 190 57% 42% / 0.3;
-    --input: 205 40% 20%;
-    --ring: 190 57% 42%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 187 94% 43%;
 
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(205 52% 23%) 0%, hsl(205 55% 13%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(205 55% 13% / 0.8) 0%, hsl(205 55% 10% / 0.9) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(190 57% 42%) 0%, hsl(190 65% 48%) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(190 57% 42% / 0.2) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 84% 3%) 0%, hsl(217 33% 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 8%) 0%, hsl(222 47% 6%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(187 94% 43%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(187 94% 43% / 0.15) 0%, transparent 70%);
     
-    --shadow-glow: 0 0 40px hsl(190 57% 42% / 0.3);
-    --shadow-card: 0 4px 24px hsl(205 52% 10% / 0.6);
-    --shadow-cta: 0 8px 32px hsl(190 57% 42% / 0.35);
+    --shadow-glow: 0 0 40px hsl(187 94% 43% / 0.25);
+    --shadow-card: 0 4px 24px hsl(222 84% 3% / 0.5);
+    --shadow-cta: 0 8px 32px hsl(187 94% 43% / 0.3);
 
-    --sidebar-background: 205 55% 13%;
+    --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 190 57% 42%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 205 40% 20%;
+    --sidebar-primary: 187 94% 43%;
+    --sidebar-primary-foreground: 222 84% 4%;
+    --sidebar-accent: 217 33% 17%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 190 57% 42% / 0.3;
-    --sidebar-ring: 190 57% 42%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 187 94% 43%;
   }
 
   .dark {
-    --background: 205 52% 23%;
+    --background: 222 84% 3%;
     --foreground: 210 40% 98%;
   }
 }
@@ -88,7 +80,7 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-[hsl(190,65%,55%)] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-cyan-300 bg-clip-text text-transparent;
   }
 
   .glow-primary {
@@ -97,10 +89,6 @@
 
   .glow-cta {
     box-shadow: var(--shadow-cta);
-  }
-
-  .text-accent-pop {
-    @apply text-accent;
   }
 
   .animate-float {
@@ -131,10 +119,10 @@
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(190 57% 42% / 0.25);
+    box-shadow: 0 0 20px hsl(187 94% 43% / 0.2);
   }
   50% {
-    box-shadow: 0 0 40px hsl(190 57% 42% / 0.5);
+    box-shadow: 0 0 40px hsl(187 94% 43% / 0.4);
   }
 }
 
