@@ -1,9 +1,9 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Search, FlaskConical, Syringe, FolderOpen } from "lucide-react";
 import bookPreview from "@/assets/book-preview.png";
 
 const contentBlocks = [
   {
-    emoji: "🔎",
+    icon: Search,
     title: "Fundamentos y Evaluación Clínica",
     items: [
       "Definición práctica del edema pulmonar cardiogénico",
@@ -12,7 +12,7 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "🔬",
+    icon: FlaskConical,
     title: "Clasificación Hemodinámica y Decisión Rápida",
     items: [
       "Cómo identificar el perfil clínico-hemodinámico en minutos",
@@ -21,7 +21,7 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "💉",
+    icon: Syringe,
     title: "Protocolo de Estabilización Paso a Paso",
     items: [
       "ABC de emergencia y soporte inicial al paciente en crisis",
@@ -31,7 +31,7 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "📁",
+    icon: FolderOpen,
     title: "Casos Clínicos y Guías Visuales",
     items: [
       "Casos reales con evolución y resolución documentada",
@@ -62,25 +62,28 @@ const ContentPreviewSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Blocos de conteúdo */}
           <div className="space-y-6">
-            {contentBlocks.map((block, index) => (
-              <div
-                key={index}
-                className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
-              >
-                <h4 className="font-semibold text-foreground text-lg mb-3">
-                  <span className="mr-2">{block.emoji}</span>
-                  {block.title}
-                </h4>
-                <ul className="space-y-2">
-                  {block.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2">
-                      <CheckCircle size={16} className="text-primary mt-0.5 shrink-0" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {contentBlocks.map((block, index) => {
+              const IconComponent = block.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
+                >
+                  <h4 className="font-semibold text-foreground text-lg mb-3 flex items-center gap-2">
+                    <IconComponent size={20} className="text-primary" />
+                    {block.title}
+                  </h4>
+                  <ul className="space-y-2">
+                    {block.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start gap-2">
+                        <CheckCircle size={16} className="text-primary mt-0.5 shrink-0" />
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
           </div>
 
           <div className="flex flex-col items-center lg:items-end gap-6">
