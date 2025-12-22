@@ -3,6 +3,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import indiceImage from '@/assets/indice-ebook.png';
 import introduccionImage from '@/assets/introduccion-ebook.png';
 import pagina4Image from '@/assets/pagina4-ebook.png';
+import pagina5Image from '@/assets/pagina5-ebook.png';
 
 const PreviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -49,7 +50,7 @@ const PreviewSection = () => {
     { 
       id: 5, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333?text=Casos+Reales', 
+      src: pagina5Image, 
       alt: 'Casos Reales' 
     },
     { 
