@@ -6,9 +6,9 @@
 
 @layer base {
   :root {
-    --background: 200 52% 7%;
-    --background-alt: 200 52% 6.5%;
-    --background-subtle: 200 52% 7.5%;
+    --background: 200 52% 8%;
+    --background-alt: 200 52% 7%;
+    --background-subtle: 200 52% 9%;
     --foreground: 210 40% 98%;
 
     --card: 200 52% 15%;
