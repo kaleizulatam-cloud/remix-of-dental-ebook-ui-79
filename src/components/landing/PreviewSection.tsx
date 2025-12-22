@@ -295,7 +295,7 @@ const PreviewSection = () => {
           </button>
           
           <p className="text-muted-foreground text-sm font-medium text-center">
-            40+ páginas de contenido profesional validado científicamente
+            30+ páginas de contenido profesional validado científicamente
           </p>
         </div>
 
