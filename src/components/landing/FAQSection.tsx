@@ -53,11 +53,11 @@ const FAQSection = () => {
       <div className="absolute bottom-24 right-10 w-56 h-56 bg-primary/[0.015] rounded-full blur-[100px] pointer-events-none" />
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Preguntas <span className="text-gradient">Frecuentes</span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Preguntas <span className="text-gradient drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">Frecuentes</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto font-light">
             Respuestas a las dudas más comunes sobre el ebook
           </p>
         </div>
