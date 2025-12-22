@@ -5,8 +5,13 @@ const PreviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [maxSlide, setMaxSlide] = useState(3);
   const [translateX, setTranslateX] = useState(0);
+  const [showArrows, setShowArrows] = useState(false);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  
+  // Touch/swipe handling
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   const pages = [
     { 
@@ -96,6 +101,43 @@ const PreviewSection = () => {
     }
   };
 
+  // Touch handlers for swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 50;
+
+    if (Math.abs(diff) > minSwipeDistance) {
+      if (diff > 0) {
+        // Swipe left -> next slide
+        nextSlide();
+      } else {
+        // Swipe right -> prev slide
+        prevSlide();
+      }
+    }
+  };
+
+  // Toggle arrows on touch/click (mobile)
+  const handleCarouselTap = () => {
+    setShowArrows(prev => !prev);
+  };
+
+  // Hide arrows after 3 seconds
+  useEffect(() => {
+    if (showArrows) {
+      const timer = setTimeout(() => setShowArrows(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [showArrows]);
+
   return (
     <section className="py-16 bg-[#0A1628] overflow-hidden relative">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +153,14 @@ const PreviewSection = () => {
         </div>
 
         {/* Carrossel de Páginas */}
-        <div className="relative mb-12 group" ref={containerRef}>
+        <div 
+          className="relative mb-12 group" 
+          ref={containerRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onClick={handleCarouselTap}
+        >
           
           {/* Container das Imagens */}
           <div className="overflow-hidden">
@@ -132,29 +181,33 @@ const PreviewSection = () => {
                   <img 
                     src={page.src} 
                     alt={page.alt} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover pointer-events-none"
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Botão de Navegação (Seta Esquerda) - só aparece quando currentSlide > 0 */}
+          {/* Botão de Navegação (Seta Esquerda) - desktop sempre visível, mobile só quando showArrows */}
           {currentSlide > 0 && (
             <button 
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 hidden md:flex items-center justify-center"
+              onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+              className={`absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
+                ${showArrows ? 'flex' : 'hidden'} md:flex
+              `}
               aria-label="Ver páginas anteriores"
             >
               <ChevronLeft size={20} strokeWidth={2.5} />
             </button>
           )}
  
-          {/* Botão de Navegação (Seta Direita) */}
+          {/* Botão de Navegação (Seta Direita) - desktop sempre visível, mobile só quando showArrows */}
           {currentSlide < maxSlide && (
             <button 
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 hidden md:flex items-center justify-center"
+              onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+              className={`absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-[#0F172A] text-foreground p-2 rounded-full shadow-2xl border border-border hover:bg-primary hover:border-primary hover:text-primary-foreground hover:shadow-[0_0_25px_hsl(var(--primary)/0.5)] transition-all duration-300 items-center justify-center
+                ${showArrows ? 'flex' : 'hidden'} md:flex
+              `}
               aria-label="Ver más páginas"
             >
               <ChevronRight size={20} strokeWidth={2.5} />
