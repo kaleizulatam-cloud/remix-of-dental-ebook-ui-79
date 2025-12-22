@@ -145,7 +145,7 @@ const PreviewSection = () => {
         {/* Header */}
         <div className="text-center mb-10 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]">Ebook</span>
+            Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300 drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]">Ebook</span>
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto font-light leading-relaxed">
             Explora las primeras páginas y descubre el contenido de alta calidad que te espera
@@ -174,7 +174,7 @@ const PreviewSection = () => {
                   key={page.id} 
                   className={`
                     flex-shrink-0 w-[240px] md:w-[280px] h-[336px] md:h-[392px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
-                    ${page.type === 'cover' ? 'shadow-cyan-900/40' : 'shadow-black/50'}
+                    ${page.type === 'cover' ? 'shadow-primary/40' : 'shadow-black/50'}
                     hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
                 >
