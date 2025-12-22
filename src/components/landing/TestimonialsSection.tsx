@@ -40,7 +40,9 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="pt-8 pb-24 bg-[#050B14] relative">
+    <section className="pt-8 pb-24 bg-background relative overflow-hidden">
+      {/* Efeitos de luz fosca */}
+      <div className="absolute top-24 right-20 w-48 h-48 bg-primary/[0.015] rounded-full blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -65,7 +67,7 @@ const TestimonialsSection = () => {
             {testimonials.map((item) => (
               <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
                 <div 
-                  className="bg-[#0B1221] border border-border/60 p-8 rounded-2xl shadow-xl flex flex-col justify-between h-full min-h-[320px] transition-all duration-300 hover:border-primary/20"
+                  className="bg-card border border-border/60 p-8 rounded-2xl shadow-xl flex flex-col justify-between h-full min-h-[320px] transition-all duration-300 hover:border-primary/20"
                 >
                   <div>
                     {/* Stars */}

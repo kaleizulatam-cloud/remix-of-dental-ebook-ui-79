@@ -25,7 +25,9 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="beneficios" className="py-20 bg-gradient-to-b from-background to-card/50">
+    <section id="beneficios" className="py-20 bg-background-subtle relative overflow-hidden">
+      {/* Efeitos de luz fosca */}
+      <div className="absolute bottom-20 left-16 w-56 h-56 bg-primary/[0.02] rounded-full blur-[100px] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
