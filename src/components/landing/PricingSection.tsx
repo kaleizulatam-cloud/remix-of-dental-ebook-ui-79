@@ -27,10 +27,13 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="precio" className="py-20 bg-background-alt flex flex-col items-center">
+    <section id="precio" className="py-20 bg-background-alt flex flex-col items-center relative overflow-hidden">
+      {/* Efeitos de luz nos cantos */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-primary/4 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/3 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
       
       {/* Headline */}
-      <div className="text-center mb-12 px-4">
+      <div className="text-center mb-12 px-4 relative z-10">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
           Inversión en Tu <span className="text-gradient drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">Desarrollo Profesional</span>
         </h1>
