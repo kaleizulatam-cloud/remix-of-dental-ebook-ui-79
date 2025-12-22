@@ -3,39 +3,40 @@ import bookPreview from "@/assets/book-preview.png";
 
 const contentBlocks = [
   {
-    title: "Fundamentos y Diagnóstico",
+    emoji: "🔎",
+    title: "Fundamentos y Evaluación Clínica",
     items: [
-      "Definición y tiempo ideal de erupción",
-      "Importancia del diagnóstico precoz",
-      "Prevención de secuelas",
-      "Evaluación del pronóstico",
+      "Definición práctica del edema pulmonar cardiogénico",
+      "Signos clínicos clave para diferenciar de un cuadro respiratorio",
+      "Principales errores que aumentan el riesgo de muerte",
     ],
   },
   {
-    title: "Técnicas de Evaluación",
+    emoji: "🔬",
+    title: "Clasificación Hemodinámica y Decisión Rápida",
     items: [
-      "Uso de radiografías en diagnóstico",
-      "Aplicación de tomografía computarizada",
-      "Interpretación de imágenes",
-      "Interceptación temprana de caninos",
+      "Cómo identificar el perfil clínico-hemodinámico en minutos",
+      "Qué hacer en cada perfil: húmedo-cálido, húmedo-frío, etc.",
+      "Indicadores objetivos para saber si tu paciente está respondiendo",
     ],
   },
   {
-    title: "Protocolos de Tratamiento",
+    emoji: "💉",
+    title: "Protocolo de Estabilización Paso a Paso",
     items: [
-      "Espacio necesario para erupción",
-      "Técnicas de tracción ortodóncica",
-      "Biomecánica segura y controlada",
-      "Tratamiento de caninos impactados",
+      "ABC de emergencia y soporte inicial al paciente en crisis",
+      "Oxigenoterapia y manejo del estrés respiratorio",
+      "Uso correcto de diuréticos, vasodilatadores y otros fármacos",
+      "Errores comunes al usar furosemida, y cómo evitarlos",
     ],
   },
   {
-    title: "Además, obtendrás acceso a:",
+    emoji: "📁",
+    title: "Casos Clínicos y Guías Visuales",
     items: [
-      "Decisiones según pronóstico: mantener, traccionar o extraer",
-      "Estudios de caso con documentación fotográfica completa",
-      "Resumen de protocolos de prevención e interceptación",
-      "Guías paso a paso para cada procedimiento clínico",
+      "Casos reales con evolución y resolución documentada",
+      "Diagramas anatómicos para entender la fisiopatología",
+      "Tablas rápidas de conducta y checklist de estabilización",
     ],
   },
 ];
@@ -54,7 +55,7 @@ const ContentPreviewSection = () => {
             Contenido del <span className="text-gradient">Ebook</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Acceso completo a protocolos clínicos validados y casos documentados paso a paso.
+            Acceso completo a protocolos de emergencia cardiopulmonar validados y aplicables con los recursos de tu clínica
           </p>
         </div>
 
@@ -66,7 +67,10 @@ const ContentPreviewSection = () => {
                 key={index}
                 className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
               >
-                <h4 className="font-semibold text-foreground text-lg mb-3">{block.title}</h4>
+                <h4 className="font-semibold text-foreground text-lg mb-3">
+                  <span className="mr-2">{block.emoji}</span>
+                  {block.title}
+                </h4>
                 <ul className="space-y-2">
                   {block.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-2">
