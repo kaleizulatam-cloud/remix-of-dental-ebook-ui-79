@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import indiceImage from '@/assets/indice-ebook.png';
+import introduccionImage from '@/assets/introduccion-ebook.png';
 
 const PreviewSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +36,7 @@ const PreviewSection = () => {
     { 
       id: 3, 
       type: 'page', 
-      src: 'https://placehold.co/400x560/ffffff/333333?text=Introducción+Clínica', 
+      src: introduccionImage, 
       alt: 'Introdução' 
     },
     { 
