@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kaleizuLogo from "@/assets/kaleizu-logo-white.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,9 +11,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <span className="text-xl font-bold text-gradient">
-              Excellence Dental
-            </span>
+            <img 
+              src={kaleizuLogo} 
+              alt="Instituto Kaleizu" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Menu */}
