@@ -4,11 +4,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <h3 className="font-bold text-foreground mb-4">
-            Excellence Dental Academy
+            Instituto Kaleizu
           </h3>
           <p className="text-muted-foreground max-w-xs">
-            Educación ortodóntica de excelencia para profesionales comprometidos
-            con resultados excepcionales.
+            Formación clínica de excelencia en cardiología veterinaria para profesionales comprometidos con salvar vidas.
           </p>
         </div>
         <div>
@@ -28,11 +27,11 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="font-bold text-foreground mb-4">Contacto</h4>
-          <p className="text-muted-foreground">contacto@excellencedentalacademy.com</p>
+          <p className="text-muted-foreground">kaleizulatam@gmail.com</p>
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-border text-center text-muted-foreground">
-        © 2025 Excellence Dental Academy. Todos los derechos reservados.
+        © 2025 Instituto Kaleizu — Todos los derechos reservados.
       </div>
     </footer>
   );
