@@ -3,7 +3,6 @@ import bookPreview from "@/assets/book-preview.png";
 
 const contentBlocks = [
   {
-    emoji: "🔎",
     title: "Fundamentos y Evaluación Clínica",
     items: [
       "Definición práctica del edema pulmonar cardiogénico",
@@ -12,7 +11,6 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "🔬",
     title: "Clasificación Hemodinámica y Decisión Rápida",
     items: [
       "Cómo identificar el perfil clínico-hemodinámico en minutos",
@@ -21,7 +19,6 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "💉",
     title: "Protocolo de Estabilización Paso a Paso",
     items: [
       "ABC de emergencia y soporte inicial al paciente en crisis",
@@ -31,7 +28,6 @@ const contentBlocks = [
     ],
   },
   {
-    emoji: "📁",
     title: "Casos Clínicos y Guías Visuales",
     items: [
       "Casos reales con evolución y resolución documentada",
@@ -67,10 +63,7 @@ const ContentPreviewSection = () => {
                 key={index}
                 className="bg-card p-5 rounded-lg border border-border hover:border-primary/20 transition-colors"
               >
-                <h4 className="font-semibold text-foreground text-lg mb-3">
-                  <span className="mr-2">{block.emoji}</span>
-                  {block.title}
-                </h4>
+                <h4 className="font-semibold text-foreground text-lg mb-3">{block.title}</h4>
                 <ul className="space-y-2">
                   {block.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-2">
