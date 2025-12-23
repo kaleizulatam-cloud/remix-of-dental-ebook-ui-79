@@ -1,25 +1,25 @@
-import { CheckCircle, TrendingUp, BookOpen, Shield } from "lucide-react";
+import { Stethoscope, Zap, FileText, HeartPulse } from "lucide-react";
 
 const features = [
   {
-    title: "Diagnóstico Preciso",
-    description: "Protocolos validados científicamente que incrementan el pronóstico y resultados clínicos.",
-    icon: CheckCircle,
+    title: "Diagnóstico Diferencial Seguro",
+    description: "Aprende a reconocer en minutos si el cuadro es cardiogénico o pulmonar con base en signos clínicos objetivos y sin necesidad de equipos costosos.",
+    icon: Stethoscope,
   },
   {
-    title: "Mejora tu Tasa de Éxito",
-    description: "Técnicas probadas que aumentan significativamente tus resultados en cada paciente.",
-    icon: TrendingUp,
+    title: "Decisiones Rápidas y Sin Duda",
+    description: "Protocolos clínicos validados que te guían paso a paso en los primeros minutos críticos para reducir el riesgo de muerte por error de manejo.",
+    icon: Zap,
   },
   {
-    title: "Casos Reales",
-    description: "Aprende de casos clínicos documentados con resultados verificables.",
-    icon: BookOpen,
+    title: "Casos Clínicos Reales",
+    description: "Situaciones de emergencia documentadas con imágenes y resultados concretos para que sepas exactamente qué hacer en pacientes reales.",
+    icon: FileText,
   },
   {
-    title: "Biomecánica Segura",
-    description: "Principios biomecánicos seguros para tratamientos predecibles.",
-    icon: Shield,
+    title: "Protocolos de Estabilización Inmediata",
+    description: "Conductas prácticas, simples y basadas en ciencia para estabilizar a tu paciente en crisis — con Tabla de Dosis incluida para medicar con seguridad.",
+    icon: HeartPulse,
   },
 ];
 
@@ -29,10 +29,10 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Por Qué Este <span className="text-gradient">Ebook</span>
+            Por Qué Este <span className="text-gradient">Ebook</span> Desarrolla
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Desarrolla competencias clínicas avanzadas con protocolos validados.
+            Competencias clínicas reales para actuar con precisión en emergencias cardiopulmonares.
           </p>
         </div>
 
