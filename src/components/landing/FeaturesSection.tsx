@@ -3,17 +3,17 @@ import { Stethoscope, Zap, FileText, HeartPulse } from "lucide-react";
 const features = [
   {
     title: "Diagnóstico Diferencial Seguro",
-    description: "Aprende a reconocer en minutos si el cuadro es cardiogénico o pulmonar con base en signos clínicos objetivos y sin necesidad de equipos costosos.",
+    description: "Reconoce en minutos si el cuadro es cardiogénico o pulmonar usando signos clínicos objetivos — sin depender de equipos costosos.",
     icon: Stethoscope,
   },
   {
     title: "Decisiones Rápidas y Sin Duda",
-    description: "Protocolos clínicos validados que te guían paso a paso en los primeros minutos críticos para reducir el riesgo de muerte por error de manejo.",
+    description: "Protocolos clínicos que guían tu actuación paso a paso en los primeros minutos críticos — sin improvisar ni cometer errores fatales.",
     icon: Zap,
   },
   {
     title: "Casos Clínicos Reales",
-    description: "Situaciones de emergencia documentadas con imágenes y resultados concretos para que sepas exactamente qué hacer en pacientes reales.",
+    description: "Situaciones de urgencia documentadas con imágenes reales y resultados concretos para saber qué hacer en pacientes similares.",
     icon: FileText,
   },
   {
