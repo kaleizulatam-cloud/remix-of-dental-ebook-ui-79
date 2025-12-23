@@ -64,7 +64,11 @@ const HeroSection = () => {
 
           <div className="relative group animate-scale-in">
             <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float">
-              <div className="bg-white rounded-xl shadow-2xl mx-auto max-w-[400px] w-full aspect-[3/4] glow-primary" />
+              <img
+                src={ebookCover}
+                alt="Ebook Tracción de Dientes Retenidos"
+                className="rounded-xl shadow-2xl mx-auto max-w-[400px] w-full glow-primary"
+              />
             </div>
           </div>
         </div>

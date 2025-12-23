@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <span className="text-xl font-bold text-gradient">
-              Instituto Kaleizu
+              Excellence Dental
             </span>
           </div>
 
