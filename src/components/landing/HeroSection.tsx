@@ -42,12 +42,12 @@ const HeroSection = () => {
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
-      {/* Ebook Image - Positioned to span full height */}
-      <div className="absolute right-0 lg:right-[5%] xl:right-[10%] top-0 bottom-0 w-[45%] hidden lg:flex items-end justify-center pointer-events-none">
+      {/* Ebook Image - Fixed position spanning hero to testimonials */}
+      <div className="fixed right-[5%] xl:right-[10%] top-[80px] w-[35%] hidden lg:flex items-start justify-center pointer-events-none z-50">
         <img
           src={ebookCover}
           alt="Guía Clínica de Emergencia - Edema Pulmonar"
-          className="w-auto h-[95%] max-w-none object-contain object-bottom drop-shadow-2xl"
+          className="w-auto h-[85vh] max-w-none object-contain object-top drop-shadow-2xl"
         />
       </div>
 
