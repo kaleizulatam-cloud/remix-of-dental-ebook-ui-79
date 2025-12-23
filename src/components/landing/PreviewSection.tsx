@@ -245,7 +245,7 @@ const PreviewSection = () => {
                   key={page.id} 
                   className={`
                     flex-shrink-0 w-[260px] md:w-[340px] h-[364px] md:h-[476px] rounded-lg overflow-hidden shadow-2xl transition-all duration-300
-                    ${page.type === 'cover' ? 'shadow-primary/40' : 'shadow-black/50'}
+                    ${page.type === 'cover' ? 'shadow-primary/40 border border-white/20' : 'shadow-black/50'}
                     hover:scale-[1.02] hover:shadow-[0_0_35px_hsl(var(--primary)/0.45)]
                   `}
                 >
