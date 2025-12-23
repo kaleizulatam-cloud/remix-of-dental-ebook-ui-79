@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-20 pb-0 overflow-hidden">
+    <section className="relative pt-20 pb-0 overflow-hidden min-h-[calc(100vh-80px)]">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -47,12 +47,12 @@ const HeroSection = () => {
         <img
           src={ebookCover}
           alt="Guía Clínica de Emergencia - Edema Pulmonar"
-          className="w-auto h-[90%] max-w-none object-contain object-bottom drop-shadow-2xl"
+          className="w-auto h-[95%] max-w-none object-contain object-bottom drop-shadow-2xl"
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
           <div className="space-y-6 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-primary/20">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO QUE AUMENTA EN 248% LA SOBREVIDA DE PACIENTES CON EDEMA PULMONAR CARDIOGÉNICO
