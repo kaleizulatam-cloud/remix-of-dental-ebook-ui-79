@@ -43,7 +43,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
       {/* Ebook Image - Positioned to span full height */}
-      <div className="absolute right-0 lg:right-[5%] xl:right-[10%] top-0 bottom-0 w-[45%] hidden lg:flex items-end justify-center overflow-visible">
+      <div className="absolute right-[-2%] lg:right-[2%] xl:right-[8%] top-[-5%] bottom-0 w-[45%] hidden lg:flex items-end justify-center overflow-visible">
         <img
           src={ebookCover}
           alt="Guía Clínica de Emergencia - Edema Pulmonar"
@@ -113,7 +113,7 @@ const HeroSection = () => {
 
       {/* Stats Bar - Full Width Section Divider */}
       <div className="w-full relative z-20 mt-2 -mb-4">
-        <div className="flex justify-center gap-6 md:gap-20 bg-white/5 border-y border-white/10 py-2 md:py-4 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex justify-center items-center gap-8 md:gap-24 bg-white/5 border-y border-white/10 py-2 md:py-4 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="bg-primary/10 p-1.5 md:p-2 rounded-full text-primary">
               <ShoppingCart size={18} className="md:w-5 md:h-5" />
