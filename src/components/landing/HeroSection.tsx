@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-20 pb-0 overflow-visible">
+    <section className="relative pt-20 pb-0 overflow-hidden min-h-[calc(100vh-80px)]">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -42,8 +42,17 @@ const HeroSection = () => {
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      {/* Ebook Image - Positioned to span full height */}
+      <div className="absolute right-0 lg:right-[5%] xl:right-[10%] top-0 bottom-0 w-[45%] hidden lg:flex items-end justify-center pointer-events-none">
+        <img
+          src={ebookCover}
+          alt="Guía Clínica de Emergencia - Edema Pulmonar"
+          className="w-auto h-[95%] max-w-none object-contain object-bottom drop-shadow-2xl"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
           <div className="space-y-6 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-primary/20">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO QUE AUMENTA EN 248% LA SOBREVIDA DE PACIENTES CON EDEMA PULMONAR CARDIOGÉNICO
@@ -62,14 +71,13 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative group animate-scale-in">
-            <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float">
-              <img
-                src={ebookCover}
-                alt="Guía Clínica de Emergencia - Edema Pulmonar"
-                className="mx-auto max-w-[450px] w-full drop-shadow-2xl"
-              />
-            </div>
+          {/* Mobile ebook image */}
+          <div className="lg:hidden flex justify-center">
+            <img
+              src={ebookCover}
+              alt="Guía Clínica de Emergencia - Edema Pulmonar"
+              className="max-w-[350px] w-full drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
