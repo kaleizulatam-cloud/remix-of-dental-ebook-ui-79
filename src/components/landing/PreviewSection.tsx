@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import ebookCapa from '@/assets/ebook-capa.png';
 import indiceImage from '@/assets/indice-ebook.png';
 import introduccionImage from '@/assets/introduccion-ebook.png';
 import pagina4Image from '@/assets/pagina4-ebook.png';
@@ -27,7 +28,7 @@ const PreviewSection = () => {
     { 
       id: 1, 
       type: 'cover', 
-      src: 'https://placehold.co/400x560/06b6d4/0f172a?text=Capa+Tracción', 
+      src: ebookCapa, 
       alt: 'Capa do Ebook' 
     },
     { 
