@@ -76,7 +76,7 @@ const HeroSection = () => {
             <img
               src={ebookCover}
               alt="Guía Clínica de Emergencia - Edema Pulmonar"
-              className="max-w-[280px] w-full drop-shadow-2xl"
+              className="max-w-[320px] w-full drop-shadow-2xl"
             />
           </div>
         </div>
