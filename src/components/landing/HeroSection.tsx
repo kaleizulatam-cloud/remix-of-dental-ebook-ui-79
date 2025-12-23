@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-20 pb-0 overflow-hidden min-h-[calc(100vh-80px)]">
+    <section className="relative pt-16 pb-0 overflow-hidden min-h-[calc(100vh-180px)]">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -40,31 +40,31 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/75 -z-10" />
       
       {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/10 rounded-full blur-[100px] -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
       {/* Ebook Image - Positioned to span full height */}
       <div className="absolute right-0 lg:right-[5%] xl:right-[10%] top-0 bottom-0 w-[45%] hidden lg:flex items-end justify-center pointer-events-none">
         <img
           src={ebookCover}
           alt="Guía Clínica de Emergencia - Edema Pulmonar"
-          className="w-auto h-[95%] max-w-none object-contain object-bottom drop-shadow-2xl"
+          className="w-auto h-[90%] max-w-none object-contain object-bottom drop-shadow-2xl"
         />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
-          <div className="space-y-6 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-primary/20">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-280px)]">
+          <div className="space-y-4 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-5 md:p-6 border border-primary/20">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO QUE AUMENTA EN 248% LA SOBREVIDA DE PACIENTES CON EDEMA PULMONAR CARDIOGÉNICO
             </h1>
-            <p className="text-lg text-slate-200 max-w-lg">
+            <p className="text-base text-slate-200 max-w-lg">
               Domina el paso a paso para estabilizar en los primeros minutos — sin cometer errores fatales
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group inline-flex items-center justify-center gap-2 h-14 px-10 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary to-orange-400">
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <button className="group inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary to-orange-400">
                 Quiero el Ebook
                 <ArrowRight
-                  size={20}
+                  size={18}
                   className="transition-transform group-hover:translate-x-1"
                 />
               </button>
@@ -76,7 +76,7 @@ const HeroSection = () => {
             <img
               src={ebookCover}
               alt="Guía Clínica de Emergencia - Edema Pulmonar"
-              className="max-w-[350px] w-full drop-shadow-2xl"
+              className="max-w-[280px] w-full drop-shadow-2xl"
             />
           </div>
         </div>
