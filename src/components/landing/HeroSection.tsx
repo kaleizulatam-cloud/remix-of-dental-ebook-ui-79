@@ -112,8 +112,8 @@ const HeroSection = () => {
       )}
 
       {/* Stats Bar - Full Width Section Divider */}
-      <div className="w-full relative z-20 mt-2 -mb-4">
-        <div className="flex justify-center items-center gap-8 md:gap-24 bg-white/5 border-y border-white/10 py-2 md:py-4 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
+      <div className="w-full relative z-20 mt-4 md:mt-2">
+        <div className="flex justify-center items-center gap-8 md:gap-24 bg-gradient-to-b from-white/10 to-white/5 border-t border-white/10 py-4 md:py-5 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="bg-primary/10 p-1.5 md:p-2 rounded-full text-primary">
               <ShoppingCart size={18} className="md:w-5 md:h-5" />
