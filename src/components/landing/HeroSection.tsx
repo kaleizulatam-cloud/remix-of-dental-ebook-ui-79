@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-16 pb-0 overflow-hidden min-h-[calc(100vh-180px)]">
+    <section className="relative pt-12 pb-0 overflow-hidden min-h-[calc(100vh-220px)]">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
@@ -52,7 +52,7 @@ const HeroSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[calc(100vh-280px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center min-h-[calc(100vh-320px)]">
           <div className="space-y-4 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-5 md:p-6 border border-primary/20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO QUE AUMENTA EN 248% LA SOBREVIDA DE PACIENTES CON EDEMA PULMONAR CARDIOGÉNICO
@@ -112,8 +112,8 @@ const HeroSection = () => {
       )}
 
       {/* Stats Bar - Full Width Section Divider */}
-      <div className="w-full relative z-20 mt-6 -mb-4">
-        <div className="flex justify-center gap-6 md:gap-24 bg-white/5 border-y border-white/10 py-3 md:py-6 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
+      <div className="w-full relative z-20 mt-2 -mb-4">
+        <div className="flex justify-center gap-6 md:gap-20 bg-white/5 border-y border-white/10 py-2 md:py-4 px-4 backdrop-blur-xl animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="bg-primary/10 p-1.5 md:p-2 rounded-full text-primary">
               <ShoppingCart size={18} className="md:w-5 md:h-5" />
