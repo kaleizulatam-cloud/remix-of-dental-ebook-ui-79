@@ -63,12 +63,12 @@ const HeroSection = () => {
           </div>
 
           <div className="relative group animate-scale-in">
-            <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float">
+            <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float mix-blend-lighten">
               <img
                 src={ebookCover}
                 alt="Guía Clínica de Emergencia - Edema Pulmonar"
-                className="mx-auto max-w-[450px] w-full mix-blend-multiply dark:mix-blend-screen drop-shadow-2xl"
-                style={{ filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.5))' }}
+                className="mx-auto max-w-[450px] w-full"
+                style={{ filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3))' }}
               />
             </div>
           </div>
