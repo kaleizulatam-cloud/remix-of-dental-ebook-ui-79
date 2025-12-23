@@ -66,8 +66,9 @@ const HeroSection = () => {
             <div className="relative z-10 transform transition duration-500 group-hover:scale-105 animate-float">
               <img
                 src={ebookCover}
-                alt="Ebook Tracción de Dientes Retenidos"
-                className="rounded-xl shadow-2xl mx-auto max-w-[400px] w-full glow-primary"
+                alt="Guía Clínica de Emergencia - Edema Pulmonar"
+                className="mx-auto max-w-[450px] w-full mix-blend-multiply dark:mix-blend-screen drop-shadow-2xl"
+                style={{ filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.5))' }}
               />
             </div>
           </div>
