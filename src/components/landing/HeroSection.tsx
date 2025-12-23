@@ -119,7 +119,7 @@ const HeroSection = () => {
               <ShoppingCart size={18} className="md:w-5 md:h-5" />
             </div>
             <div>
-              <p className="text-[10px] md:text-xs text-slate-400 uppercase leading-tight">
+              <p className="text-[10px] md:text-xs text-white uppercase leading-tight">
                 Ventas Totales
               </p>
               <p className="text-base md:text-xl font-bold text-white">705</p>
@@ -130,7 +130,7 @@ const HeroSection = () => {
               <Users size={18} className="md:w-5 md:h-5" />
             </div>
             <div>
-              <p className="text-[10px] md:text-xs text-slate-400 uppercase leading-tight">
+              <p className="text-[10px] md:text-xs text-white uppercase leading-tight">
                 Profesionales Activos
               </p>
               <p className="text-base md:text-xl font-bold text-white">500+</p>
