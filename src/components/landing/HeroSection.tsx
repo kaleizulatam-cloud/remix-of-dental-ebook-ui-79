@@ -31,7 +31,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative pt-12 pb-0 overflow-hidden min-h-[calc(100vh-220px)]">
+    <section className="relative pt-12 pb-0 overflow-hidden min-h-[calc(100vh-320px)]">
       {/* Background Image with Dark Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-20"
