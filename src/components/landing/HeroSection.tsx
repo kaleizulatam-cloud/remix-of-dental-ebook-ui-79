@@ -43,7 +43,7 @@ const HeroSection = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 rounded-full blur-[100px] -z-10" />
 
       {/* Ebook Image - Positioned to span full height */}
-      <div className="absolute right-[-2%] lg:right-[2%] xl:right-[8%] top-[-10%] bottom-0 w-[45%] hidden lg:flex items-end justify-center overflow-visible">
+      <div className="absolute right-[-2%] lg:right-[2%] xl:right-[8%] top-[-15%] bottom-0 w-[45%] hidden lg:flex items-end justify-center overflow-visible">
         <img
           src={ebookCover}
           alt="Guía Clínica de Emergencia - Edema Pulmonar"
