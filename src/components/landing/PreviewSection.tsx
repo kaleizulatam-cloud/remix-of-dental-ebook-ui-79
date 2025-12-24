@@ -215,7 +215,7 @@ const PreviewSection = () => {
             Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300 drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]">Ebook</span>
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto font-light leading-relaxed">
-            Explora las primeras páginas y descubre el contenido de alta calidad que te espera
+            Con los principales esquemas clínicos desarrollados a lo largo de 20 años de docencia, enfocados en lo que más genera duda entre veterinarios generales
           </p>
         </div>
 
