@@ -53,7 +53,7 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start md:items-center min-h-[calc(100vh-320px)]">
-          <div className="space-y-4 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 md:p-6 border border-primary/20">
+          <div className="space-y-4 animate-fade-up bg-secondary/40 backdrop-blur-md rounded-2xl p-6 py-10 md:p-8 md:py-14 border border-primary/20">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight tracking-tight text-white">
               EL MÉTODO DEFINITIVO QUE AUMENTA EN 248% LA SOBREVIDA DE PACIENTES CON EDEMA PULMONAR CARDIOGÉNICO
             </h1>
