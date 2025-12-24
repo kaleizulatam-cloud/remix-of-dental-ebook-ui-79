@@ -1,5 +1,6 @@
 import { CheckCircle, Search, FlaskConical, Syringe, FolderOpen } from "lucide-react";
 import bookPreview from "@/assets/book-preview.png";
+import vetCatImage from "@/assets/vet-cat-examination.jpg";
 
 const contentBlocks = [
   {
@@ -90,14 +91,15 @@ const ContentPreviewSection = () => {
 
           <div className="flex flex-col items-center lg:items-end gap-6">
             <img
+              src={vetCatImage}
+              className="rounded-xl shadow-lg border border-border w-full max-w-md object-cover"
+              alt="Veterinários examinando gato"
+            />
+            <img
               src={bookPreview}
               className="rounded-xl shadow-lg border border-border w-full max-w-md"
               alt="Book Preview"
             />
-            {/* Placeholder para nova imagem */}
-            <div className="w-full max-w-md h-64 rounded-xl border-2 border-dashed border-border/50 bg-card/30 flex items-center justify-center">
-              <span className="text-muted-foreground text-sm">Espaço para imagem</span>
-            </div>
           </div>
         </div>
       </div>
