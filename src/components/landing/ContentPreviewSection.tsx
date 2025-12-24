@@ -1,6 +1,6 @@
 import { CheckCircle, Search, FlaskConical, Syringe, FolderOpen } from "lucide-react";
-import bookPreview from "@/assets/book-preview.png";
 import vetCatImage from "@/assets/vet-cat-examination.jpg";
+import vetDogImage from "@/assets/vet-dog-consultation.jpg";
 
 const contentBlocks = [
   {
@@ -96,9 +96,9 @@ const ContentPreviewSection = () => {
               alt="Veterinários examinando gato"
             />
             <img
-              src={bookPreview}
-              className="rounded-xl shadow-lg border border-border w-full max-w-md"
-              alt="Book Preview"
+              src={vetDogImage}
+              className="rounded-xl shadow-lg border border-border w-full max-w-md object-cover"
+              alt="Veterinário examinando cachorro"
             />
           </div>
         </div>
