@@ -72,7 +72,7 @@ const HeroSection = () => {
           </div>
 
           {/* Mobile ebook image */}
-          <div className="lg:hidden flex justify-center -mt-6">
+          <div className="lg:hidden flex justify-center -mt-12">
             <img
               src={ebookCover}
               alt="Guía Clínica de Emergencia - Edema Pulmonar"
