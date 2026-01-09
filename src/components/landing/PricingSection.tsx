@@ -78,10 +78,15 @@ const PricingSection = () => {
         </div>
 
         {/* Botão CTA */}
-        <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 mb-8 transition-transform hover:scale-[1.02] shadow-[0_0_20px_hsl(var(--primary)/0.3)]">
+        <a 
+          href="https://pay.hotmart.com/Y102274065O?off=ru1z268a&checkoutMode=10&bid=1767982708052"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 rounded-xl text-lg flex items-center justify-center gap-2 mb-8 transition-transform hover:scale-[1.02] shadow-[0_0_20px_hsl(var(--primary)/0.3)]"
+        >
           Comprar Ahora por USD 10
           <CreditCard size={20} />
-        </button>
+        </a>
 
         {/* Lista de Benefícios */}
         <div className="space-y-4 mb-8">
