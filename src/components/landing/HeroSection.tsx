@@ -61,13 +61,13 @@ const HeroSection = () => {
               Domina el paso a paso para estabilizar en los primeros minutos — sin cometer errores fatales
             </p>
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <button className="group inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary to-orange-400">
+              <a href="#precio" className="group inline-flex items-center justify-center gap-2 h-12 px-8 text-base font-bold text-primary-foreground rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary to-orange-400">
                 Quiero el Ebook
                 <ArrowRight
                   size={18}
                   className="transition-transform group-hover:translate-x-1"
                 />
-              </button>
+              </a>
             </div>
           </div>
 
