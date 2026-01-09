@@ -26,9 +26,11 @@ const Navbar = () => {
             <a href="#faq" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               FAQ
             </a>
-            <Button variant="cta" size="default">
-              Obtener Ebook
-            </Button>
+            <a href="#precio">
+              <Button variant="cta" size="default">
+                Obtener Ebook
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,9 +67,11 @@ const Navbar = () => {
             >
               FAQ
             </a>
-            <Button variant="cta" className="w-full mt-2">
-              Obtener Ebook
-            </Button>
+            <a href="#precio" className="w-full">
+              <Button variant="cta" className="w-full mt-2">
+                Obtener Ebook
+              </Button>
+            </a>
           </div>
         </div>
       )}

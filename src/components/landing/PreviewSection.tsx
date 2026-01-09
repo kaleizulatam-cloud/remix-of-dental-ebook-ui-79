@@ -291,9 +291,9 @@ const PreviewSection = () => {
 
         {/* CTA Bottom */}
         <div className="flex flex-col items-center justify-center gap-4">
-          <button className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold py-4 px-10 rounded-lg flex items-center gap-2 shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95 w-full md:w-auto justify-center">
+          <a href="#precio" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold py-4 px-10 rounded-lg flex items-center gap-2 shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95 w-full md:w-auto justify-center">
             Obtener Ebook Completo por USD 10 <ArrowRight size={20} strokeWidth={2.5} />
-          </button>
+          </a>
           
           <p className="text-muted-foreground text-sm font-medium text-center">
             30+ páginas de contenido profesional validado científicamente
