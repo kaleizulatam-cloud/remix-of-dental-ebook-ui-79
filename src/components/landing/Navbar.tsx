@@ -28,7 +28,7 @@ const Navbar = () => {
             </a>
             <a href="#precio">
               <Button variant="cta" size="default">
-                Obtener Ebook
+                Obtener Guía
               </Button>
             </a>
           </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
             </a>
             <a href="#precio" className="w-full">
               <Button variant="cta" className="w-full mt-2">
-                Obtener Ebook
+                Obtener Guía
               </Button>
             </a>
           </div>

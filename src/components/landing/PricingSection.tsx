@@ -50,7 +50,7 @@ const PricingSection = () => {
         <div className="flex justify-between items-center mb-8">
           <div className="flex items-center gap-2 text-muted-foreground">
             <CreditCard size={18} />
-            <span className="font-medium text-sm">Ebook Digital</span>
+            <span className="font-medium text-sm">Guía Digital</span>
           </div>
           <div className="bg-secondary border border-border text-muted-foreground text-xs px-3 py-1 rounded-full font-medium">
             Oferta Especial

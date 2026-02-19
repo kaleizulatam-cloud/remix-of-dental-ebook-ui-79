@@ -53,7 +53,7 @@ const ContentPreviewSection = () => {
         {/* Header centralizado */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Contenido del <span className="text-gradient">Ebook</span>
+            Contenido de la <span className="text-gradient">Guía</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Acceso completo a protocolos de emergencia cardiopulmonar validados y aplicables con los recursos de tu clínica

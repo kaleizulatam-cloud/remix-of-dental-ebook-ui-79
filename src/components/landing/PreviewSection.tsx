@@ -212,7 +212,7 @@ const PreviewSection = () => {
         {/* Header */}
         <div className="text-center mb-10 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-            Preview del <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300 drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]">Ebook</span>
+            Preview de la <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-300 drop-shadow-[0_0_15px_hsl(var(--primary)/0.5)]">Guía</span>
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto font-light leading-relaxed">
             Con los principales esquemas clínicos desarrollados a lo largo de 20 años de docencia, enfocados en lo que más genera duda entre veterinarios generales
@@ -292,7 +292,7 @@ const PreviewSection = () => {
         {/* CTA Bottom */}
         <div className="flex flex-col items-center justify-center gap-4">
           <a href="#precio" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-bold py-4 px-10 rounded-lg flex items-center gap-2 shadow-[0_0_25px_rgba(6,182,212,0.4)] transition-all hover:scale-105 active:scale-95 w-full md:w-auto justify-center">
-            Obtener Ebook Completo por USD 10 <ArrowRight size={20} strokeWidth={2.5} />
+            Obtener Guía Completa por USD 10 <ArrowRight size={20} strokeWidth={2.5} />
           </a>
           
           <p className="text-muted-foreground text-sm font-medium text-center">

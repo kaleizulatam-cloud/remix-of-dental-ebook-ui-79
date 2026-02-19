@@ -3,12 +3,12 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 
 const faqs = [
   {
-    question: "¿Cómo recibiré el ebook después de la compra?",
+    question: "¿Cómo recibiré la guía después de la compra?",
     answer:
-      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga del Guía en formato PDF. El acceso es instantáneo y podrás abrirlo en todos tus dispositivos.",
+      "Inmediatamente después de completar tu pago, recibirás un correo electrónico con el enlace de descarga de la guía en formato PDF. El acceso es instantáneo y podrás abrirlo en todos tus dispositivos.",
   },
   {
-    question: "¿En qué dispositivos puedo leer el ebook?",
+    question: "¿En qué dispositivos puedo leer la guía?",
     answer:
       "El archivo está en formato PDF universal, compatible con cualquier dispositivo: computadoras (Windows, Mac, Linux), tablets, smartphones (iOS, Android) y lectores de ebooks. No necesitas ningún programa especial.",
   },
@@ -28,7 +28,7 @@ const faqs = [
       "No. El pago de USD 10 es único y te da acceso completo y vitalicio al Guía. Sin suscripciones mensuales, sin cargos ocultos, sin letra pequeña.",
   },
   {
-    question: "¿Puedo imprimir el ebook?",
+    question: "¿Puedo imprimir la guía?",
     answer:
       "Claro. El PDF está listo para impresión. Puedes imprimirlo completo o solo las secciones que quieras tener a mano en tu consultorio o clínica.",
   },
@@ -58,7 +58,7 @@ const FAQSection = () => {
             Preguntas <span className="text-gradient drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]">Frecuentes</span>
           </h2>
           <p className="mt-6 text-muted-foreground text-lg max-w-2xl mx-auto font-light">
-            Respuestas a las dudas más comunes sobre el ebook
+            Respuestas a las dudas más comunes sobre la guía
           </p>
         </div>
 
