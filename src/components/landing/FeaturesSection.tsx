@@ -29,7 +29,7 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold">
-            Por Qué Este <span className="text-gradient">Ebook</span> Desarrolla
+            Por Qué Esta <span className="text-gradient">Guía</span> Desarrolla
           </h2>
           <p className="mt-4 text-muted-foreground">
             Competencias clínicas reales para actuar con precisión en emergencias cardiopulmonares.
